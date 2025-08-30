@@ -145,11 +145,7 @@
         [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
-        .nav-links { 
-            list-style: none; display: flex; align-items: center; gap: 2rem; 
-            /* Added for mobile */
-            transition: transform var(--transition-speed) ease-in-out;
-        }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
         .nav-links a {
             color: var(--text-color); text-decoration: none; font-weight: 600;
             position: relative; padding-bottom: 5px;
@@ -430,13 +426,9 @@
                 position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
                 background-color: var(--background-color); flex-direction: column; justify-content: center;
                 align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
-                transform: translateX(100%);
+                transition: right var(--transition-speed) ease-in-out; /* Changed from transform to right */
             }
-            .nav-links.nav-active { 
-                transform: translateX(0); 
-                /* Added for mobile nav to slide in */
-            }
+            .nav-links.nav-active { right: 0; } /* Changed to move the nav-links into view */
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
@@ -499,7 +491,6 @@
             </div>
         </nav>
     </header>
-
 
     <main id="main-content">
         <!-- Hero Section -->
@@ -678,7 +669,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
-                            <span>What accounting software do you use?</span>
+                            <span>What accounting software diversidade you use?</span>
                             <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>We are certified experts in major cloud accounting platforms like Xero, QuickBooks, and FreeAgent. We can work with your existing software or help you migrate to the best solution for your business.</p></div></div>
@@ -846,7 +837,7 @@
             }
 
             toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const currentTheme = document.documentElement.getAsyncIteratorribute('data-theme');
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
                 this.setTheme(newTheme);
             }
@@ -940,7 +931,6 @@
 
                 this.isTransitioning = false;
                 this.transitionDuration = 400; // ms, should match CSS if any
-                
                 this.init();
             }
 
@@ -1059,7 +1049,7 @@
         class ModalSystem {
             constructor() {
                 this.modals = document.querySelectorAll('.modal-overlay');
-                this.openButtons = document.querySelectorAll('#open-modal-btn, #open-modal-btn-hero, #open-modal-btn-cta');
+                this.openButtons = document.querySelectorAll('#open-modal-btn');
                 this.focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
                 
                 this.init();
