@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- =================================================================
+    METADATA & PERFORMANCE HINTS
+    ================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisetax Accountants | Modern Financial Solutions in Slough</title>
+    <meta name="description" content="Wisetax Accountants - Expert tax, bookkeeping, and business advisory services in Slough, UK. Trusted professionals for SMEs, startups, and individuals.">
+    <meta name="keywords" content="accountants slough, tax advice uk, bookkeeping services, business advisory, SME accountants, wisetax">
+    <meta name="author" content="Wisetax Accountants">
+
+    <!-- PWA & Theme Color -->
+    <meta name="theme-color" content="#001F3F">
+    <!-- Note: Create a manifest.json file for full PWA capabilities -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.web3forms.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Wisetax Accountants | Expert Financial Solutions in Slough">
+    <meta property="og:description" content="Tailored accounting and tax strategies to drive your business success.">
+    <meta property="og:image" content="https://placehold.co/1200x630/001f3f/ffffff?text=Wisetax">
+    <meta property="og:url" content="https://www.wisetax.co.uk">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="wisetax-logo.jpg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =================================================================
+        CRITICAL CSS (INLINE FOR PERFORMANCE)
+        - Base styles, variables, header, and hero section
+        - These styles are essential for rendering the above-the-fold content without delay.
+        ================================================================== */
+        :root {
+            /* Color Palette */
+            --primary-color: #001F3F; /* Deep Navy Blue */
+            --accent-color: #3B82F6; /* Light Blue */
+            --background-color: #FFFFFF; /* Crisp White */
+            --surface-color: #F5F5F5; /* Subtle Gray */
+            --text-color: #333333;
+            --text-muted-color: #6c757d;
+            
+            /* Typography */
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+
+            /* Fluid Sizing (Modern CSS) */
+            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16px -> 18px */
+            --font-size-h1: clamp(2rem, 1.5rem + 2.5vw, 3.5rem); /* 32px -> 56px */
+            --font-size-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem); /* 28px -> 44px */
+            --space-section: clamp(4rem, 2rem + 10vw, 8rem); /* 64px -> 128px */
+            --space-content: clamp(1.5rem, 1rem + 2.5vw, 3rem); /* 24px -> 48px */
+
+            /* Other Variables */
+            --transition-speed: 0.3s;
+            --border-radius: 10px;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #FFFFFF;
+            --accent-color: #3B82F6;
+            --background-color: #121212;
+            --surface-color: #1E1E1E;
+            --text-color: #E0E0E0;
+            --text-muted-color: #A9A9A9;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Respect user motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        html { scroll-behavior: smooth; font-size: 100%; }
+        body {
+            font-family: var(--body-font);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: var(--font-size-base);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            overflow-x: hidden;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
+        h1, h2, h3, h4 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 1rem; line-height: 1.2; }
+        h1 { font-size: var(--font-size-h1); } 
+        h2 { font-size: var(--font-size-h2); } 
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.2rem; }
+        p { margin-bottom: 1rem; max-width: 75ch; }
+        section { padding: var(--space-section) 0; }
+        
+        /* Accessibility: Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -100%; /* Changed from -40px */
+            left: 0;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            z-index: 9999;
+            transition: top 0.3s ease-in-out;
+            text-decoration: none;
+            border-bottom-right-radius: 8px;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Header */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color var(--transition-speed), transform 0.3s ease-out;
+            transform: translateY(0);
+        }
+        .main-header.hidden {
+            transform: translateY(-100%);
+        }
+        [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
+        .nav-links a {
+            color: var(--text-color); text-decoration: none; font-weight: 600;
+            position: relative; padding-bottom: 5px;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background-color: var(--accent-color); transition: width var(--transition-speed) ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        
+        /* Hero Section */
+        #hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
+        }
+        .hero-video-wrapper {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+            background-color: var(--primary-color); /* Fallback color */
+        }
+        #hero-video {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        #hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.7)); z-index: -1;
+        }
+        .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
+        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        
+        /* Animation */
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =================================================================
+        DEFERRABLE CSS
+        - Styles for components below the fold.
+        - In a real-world scenario, this would be moved to a separate stylesheet 
+          and loaded asynchronously for optimal performance.
+        ================================================================== */
+        
+        /* General Components */
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+        .btn {
+            display: inline-block; padding: 12px 28px; border-radius: 50px;
+            text-decoration: none; font-weight: 600; transition: all var(--transition-speed);
+            cursor: pointer; border: 2px solid transparent; font-size: 1rem;
+        }
+        .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
+        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
+        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Mobile Navigation */
+        .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
+        .hamburger .bar {
+            display: block; width: 25px; height: 3px; margin: 5px auto;
+            background-color: var(--primary-color); transition: all var(--transition-speed) ease-in-out;
+            border-radius: 3px;
+        }
+        [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
+
+        /* About Section */
+        #about-preview { background-color: var(--background-color); }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-content); align-items: center; }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 2rem; text-align: center; margin-top: 2rem;
+        }
+        .stat-item .stat-number {
+            font-family: var(--heading-font); font-size: 2.5rem;
+            color: var(--accent-color); font-weight: 700;
+        }
+        .team-member { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0; }
+        .team-member img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+        /* Services Section */
+        #services-preview { background-color: var(--surface-color); }
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+            gap: 2rem; 
+        }
+        .service-card {
+            background-color: var(--background-color); padding: 2.5rem 2rem; border-radius: var(--border-radius);
+            border: 1px solid #e0e0e0; display: flex; flex-direction: column;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+        }
+        [data-theme="dark"] .service-card { border-color: #333; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); border-color: var(--accent-color); }
+        .service-card i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1.5rem; text-align: center; }
+        .service-card h3 { text-align: center; }
+        .service-card .price { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); text-align: center; margin-bottom: 1.5rem;}
+        .service-card ul { list-style: none; margin-bottom: 2rem; }
+        .service-card ul li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; }
+        .service-card ul li::before { content: '✓'; color: var(--accent-color); font-weight: bold; margin-right: 10px; }
+        .service-card .btn-primary { margin-top: auto; text-align: center; }
+
+        /* Industries Section */
+        .industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .industry-card {
+            background-color: var(--surface-color); padding: 2rem; border-radius: var(--border-radius);
+            text-align: center; transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .industry-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        
+        /* Testimonials Section (Modern Slider) */
+        #testimonials { background-color: var(--surface-color); }
+        .testimonial-slider-wrapper { position: relative; max-width: 800px; margin: auto; overflow: hidden; }
+        .testimonial-slider {
+            display: flex;
+        }
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 3rem; text-align: center; box-sizing: border-box;
+            background-color: var(--background-color);
+            border-radius: var(--border-radius);
+        }
+        .star-rating { color: #FFD700; margin-bottom: 1rem; }
+        .testimonial-slide blockquote { font-size: 1.2rem; font-style: italic; margin-bottom: 1rem; }
+        
+        .slider-nav {
+            margin-top: 1.5rem; display: flex; justify-content: center; align-items: center; gap: 1rem;
+        }
+        .slider-nav button {
+            background-color: var(--accent-color); border: none; color: white;
+            cursor: pointer; font-size: 1.2rem; border-radius: 50%; width: 50px; height: 50px;
+            display: flex; align-items: center; justify-content: center;
+            transition: background-color var(--transition-speed);
+        }
+        .slider-nav button:hover, .slider-nav button:focus { background-color: var(--primary-color); }
+        .slider-nav button:disabled { background-color: var(--text-muted-color); cursor: not-allowed; }
+        .slider-dots { display: flex; gap: 0.75rem; }
+        .slider-dots button {
+            width: 12px; height: 12px; border-radius: 50%;
+            background-color: var(--text-muted-color); border: none; cursor: pointer;
+            padding: 0;
+            transition: background-color var(--transition-speed);
+        }
+        .slider-dots button.active { background-color: var(--accent-color); }
+
+        /* FAQ Section */
+        #faq { background-color: var(--background-color); }
+        .faq-accordion { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            margin-bottom: 1rem; border-radius: 8px;
+            border: 1px solid #e0e0e0; overflow: hidden;
+        }
+        [data-theme="dark"] .faq-item { border-color: #333; }
+        .faq-question {
+            width: 100%; background: none; border: none; text-align: left;
+            padding: 1.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            color: var(--primary-color);
+        }
+        .faq-question .icon { transition: transform var(--transition-speed); }
+        .faq-question[aria-expanded="true"] .icon { transform: rotate(180deg); }
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s ease-out;
+        }
+        .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+        .faq-answer > div { overflow: hidden; }
+        .faq-answer p { padding: 0 1.5rem 1.5rem; margin: 0; }
+
+        /* Contact Section */
+        #contact { background-color: var(--surface-color); }
+        .contact-grid {
+            display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;
+            background-color: var(--background-color); padding: var(--space-content); border-radius: var(--border-radius);
+        }
+        .form-row { display: flex; gap: 1rem; }
+        .form-group { margin-bottom: 1.5rem; flex: 1; }
+        .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%; padding: 1rem; border-radius: 5px; border: 1px solid #ccc;
+            background-color: var(--background-color); color: var(--text-color);
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        .contact-info { padding-left: 2rem; border-left: 2px solid var(--accent-color); }
+        .contact-info a { color: inherit; text-decoration: none; transition: color var(--transition-speed); }
+        .contact-info a:hover { color: var(--accent-color); }
+        #map-embed { margin-top: 2rem; width: 100%; height: 250px; border-radius: var(--border-radius); border: 0; }
+        [data-theme="light"] #map-embed { filter: grayscale(1); }
+        [data-theme="dark"] #map-embed { filter: invert(1) grayscale(1); }
+
+        /* Form States */
+        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
+        form.loading .btn {
+            cursor: wait;
+            background-color: var(--text-muted-color);
+            border-color: var(--text-muted-color);
+        }
+        form.loading .btn::after {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-left-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
+        [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem; margin-bottom: 3rem;
+        }
+        .footer-grid h4 { color: #fff; }
+        [data-theme="dark"] .footer-grid h4 { color: var(--accent-color); }
+        .footer-grid p, .footer-grid li, .footer-grid a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-speed); }
+        .footer-grid a:hover { color: #fff; }
+        .footer-grid ul { list-style: none; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a { font-size: 1.5rem; color: #fff; }
+        .social-links a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom a { color: #fff; }
+
+        /* Utility Buttons */
+        .back-to-top, .theme-toggle {
+            position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
+            background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+            cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden;
+            transition: opacity var(--transition-speed), visibility var(--transition-speed), transform var(--transition-speed);
+        }
+        .back-to-top:hover, .theme-toggle:hover { transform: scale(1.1); }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
+
+        /* Modal System */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
+            visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed);
+        }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-content {
+            background-color: var(--background-color); border-radius: 15px; max-width: 800px; width: 95%;
+            position: relative; transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .modal-overlay.show .modal-content { transform: scale(1); }
+        .modal-info-panel { background-color: var(--primary-color); color: #fff; padding: 3rem; width: 40%; }
+        [data-theme="dark"] .modal-info-panel { background-color: var(--surface-color); }
+        .modal-info-panel h3 { color: #fff; font-size: 1.8rem; }
+        .modal-info-panel ul { list-style: none; }
+        .modal-info-panel li i { color: var(--accent-color); margin-right: 10px; width: 20px; }
+        .modal-form-panel { padding: 3rem; width: 60%; }
+        .modal-close-btn {
+            position: absolute; top: 15px; right: 20px; background: none; border: none;
+            font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
+                background-color: var(--background-color); flex-direction: column; justify-content: center;
+                align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
+                transform: translateX(100%);
+            }
+            .nav-links.nav-active { transform: translateX(0); }
+            .hamburger { display: block; }
+            .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+            .hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+            .about-content, .contact-grid { grid-template-columns: 1fr; }
+            .contact-info { border-left: none; padding-left: 0; margin-top: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .hero-content p { font-size: 1rem; }
+            .footer-grid { text-align: center; }
+            .social-links { justify-content: center; }
+            .modal-content {
+                flex-direction: column; max-width: 500px;
+                max-height: 90vh; overflow-y: auto;
+            }
+            .modal-info-panel, .modal-form-panel { width: 100%; padding: 2rem; }
+            .form-row { flex-direction: column; gap: 0; }
+        }
+    </style>
+
+    <!-- Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Wisetax Accountants",
+      "description": "Expert tax, bookkeeping, and business advisory services for SMEs, startups, and individuals in Slough, UK.",
+      "telephone": "+447533686857",
+      "email": "info@wisetax.org.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1st Floor, 7 Mackenzie Street",
+        "addressLocality": "Slough",
+        "postalCode": "SL1 1XQ",
+        "addressCountry": "UK"
+      },
+      "url": "https://www.wisetax.co.uk",
+      "logo": "https://placehold.co/200x60/001f3f/ffffff?text=Wisetax",
+      "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c6838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk",
+      "openingHours": "Mo-Fr 09:00-17:00"
+    }
+    </script>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Wisetax Accountants</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-video-wrapper">
+                <video autoplay loop muted playsinline preload="metadata" id="hero-video" poster="https://placehold.co/1920x1080/001f3f/001f3f.webp?text=+" width="1920" height="1080">
+                    <source src="wisetax-hero.webm" type="video/webm">
+                    <source src="wisetax-hero.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1>Expert Accounting for Slough's Ambitious Businesses</h1>
+                <p>Tailored tax, bookkeeping, and financial strategies from trusted, local professionals. Established 2008.</p>
+                <div class="btn-group">
+                    <a href="services.html" class="btn btn-primary">Our Services</a>
+                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview Section -->
+        <section id="about-preview">
+            <div class="container about-content">
+                <div class="about-text fade-in">
+                    <h2>Your Local Financial Experts in Slough & The Thames Valley</h2>
+                    <p>Since 2008, Wisetax Accountants has been a cornerstone of the local business community. We empower SMEs, ambitious startups, and sole traders across the Thames Valley with proactive financial strategies. Our deep understanding of the local economic landscape means we provide advice that’s not just technically sound, but commercially astute.</p>
+                    <div class="team-member">
+                        <img src="https://placehold.co/120x120/001f3f/ffffff.webp?text=AS" alt="Director Ahmed Sami Abbasi" width="60" height="60" loading="lazy" decoding="async">
+                        <div>
+                            <h4>Ahmed Sami Abbasi, Director</h4>
+                            <p>IFA, FFA, CIMA, ATOL Certified Accountant</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Meet The Team</a>
+                </div>
+                <div class="stats-grid fade-in">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>+
+                        <p class="stat-label">Happy Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="20">0</span>+
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span>M+
+                        <p class="stat-label">Taxes Saved (&pound;)</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="98">0</span>%
+                        <p class="stat-label">Client Retention</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview Section -->
+        <section id="services-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="fade-in">Our Core Services</h2>
+                    <p class="fade-in">Fixed-fee, comprehensive accounting packages designed for small businesses.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <i class="fas fa-calculator" aria-hidden="true"></i>
+                        <h3>Tax & Compliance</h3>
+                        <p class="price">From &pound;75 /month</p>
+                        <ul>
+                            <li>Annual Accounts & Corporation Tax</li>
+                            <li>Self-Assessment Tax Returns</li>
+                            <li>Proactive Tax Planning</li>
+                            <li>HMRC Representation</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Tax Quote</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
+                        <h3>Bookkeeping & VAT</h3>
+                        <p class="price">From &pound;120 /month</p>
+                        <ul>
+                            <li>IRIS Kashflow Subscription</li>
+                            <li>Monthly Bookkeeping</li>
+                            <li>VAT Return Submission (MTD)</li>
+                            <li>Receipt Management App</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Simplify My Books</a>
+                    </div>
+                    <div class="service-card fade-in">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        <h3>Growth Advisory</h3>
+                        <p class="price">From &pound;150 /month</p>
+                        <ul>
+                            <li>Cash Flow Forecasting</li>
+                            <li>Management Accounts</li>
+                            <li>Business Planning & Strategy</li>
+                            <li>Performance Dashboards</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Plan for Growth</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Industries Section -->
+        <section id="industries">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="fade-in">Industries We Serve</h2>
+                    <p class="fade-in">We provide specialist accounting services for a wide range of sectors in and around Slough.</p>
+                </div>
+                <div class="industries-grid">
+                    <div class="industry-card fade-in"><i class="fas fa-hard-hat" aria-hidden="true"></i><h4>Construction & Trade</h4><p>CIS returns, project profitability, and tax planning for contractors.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-store" aria-hidden="true"></i><h4>Retail & E-commerce</h4><p>Stock management, payment gateway integration, and multi-channel reporting.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-users" aria-hidden="true"></i><h4>Professional Services</h4><p>Accounting for consultants, marketers, solicitors, and other service-based businesses.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-hospital" aria-hidden="true"></i><h4>Healthcare & Care Homes</h4><p>Specialist accounting for locums, private practices, and care sector providers.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-home" aria-hidden="true"></i><h4>Landlords</h4><p>Property tax advice, rental income statements, and capital gains planning.</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                 <div class="section-header">
+                    <h2 class="fade-in">What Our Clients Say</h2>
+                </div>
+                <div class="testimonial-slider-wrapper fade-in" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                            <div class="star-rating" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <blockquote>"Very professional, understanding and patient. Understands and advise with their in-depth knowledge."</blockquote>
+                            <p class="author">&ndash; R. Sharma, Slough-based Travel Agency</p>
+                        </div>
+                        <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                            <div class="star-rating" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <blockquote>"Excellent service from Wise Tax Accountants – professional, efficient, and reliable. They make the whole process simple."</blockquote>
+                            <p class="author">&ndash; K. Shahzad, Local E-commerce Store</p>
+                        </div>
+                        <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                            <div class="star-rating" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <blockquote>"The most professional and approachable accountants I've ever worked with. Their bookkeeping service is seamless."</blockquote>
+                            <p class="author">&ndash; R. Aziz, IT Consultant, Windsor</p>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <button class="prev-slide" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                        <div class="slider-dots"></div>
+                        <button class="next-slide" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="fade-in">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-accordion fade-in">
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+                            <span>How much do your services cost?</span> 
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Our services are based on fixed monthly fees. A typical sole trader package starts from &pound;35/month, while a limited company package with bookkeeping and VAT starts from &pound;120/month. We provide a tailored quote after our free initial consultation.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+                            <span>How do I switch accountants to you?</span>
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>It's a simple process. Once you decide to join us, we handle everything. We'll contact your previous accountant to request all the necessary information, ensuring a smooth and hassle-free transition for you.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+                            <span>What accounting software do you use?</span>
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>We are certified experts in major cloud accounting platforms like Xero, QuickBooks, and FreeAgent. We can work with your existing software or help you migrate to the best solution for your business.</p></div></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+                            <span>Can you help with just a one-off tax return?</span>
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Absolutely. While we offer comprehensive monthly packages, we are also happy to assist with one-off personal Self-Assessment tax returns. Contact us for a fixed-fee quote.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                 <div class="section-header">
+                    <h2 class="fade-in">Get In Touch</h2>
+                </div>
+                <div class="contact-grid fade-in">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form" novalidate>
+                        <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
+                        <div class="form-row">
+                            <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
+                            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+                        </div>
+                        <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" rows="5" required placeholder="Tell us about your business..."></textarea></div>
+                        <button type="submit" class="btn btn-primary">Send Secure Message</button>
+                        <p class="form-status" role="status"></p>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
+                    </div>
+                </div>
+                <iframe id="map-embed" class="fade-in" title="Wisetax Accountants Location" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c6838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
+                <div><h4>Quick Links</h4><ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul></div>
+                <div><h4>Contact Us</h4>
+                    <p>1st floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
+                    <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
+                    <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
+                </div>
+                <div><h4>Connect With Us</h4><div class="social-links">
+                    <a href="https://uk.linkedin.com/company/wisetax-accountants-uk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/wisetaxuk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/WisetaxUK" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Wisetax Accountants | All Rights Reserved | <a href="privacy.html">Privacy Notice</a></p></div>
+        </div>
+    </footer>
+    
+    <!-- Consultation Modal -->
+    <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title" hidden>
+        <div class="modal-content">
+            <div class="modal-info-panel">
+                <h3>Start the Conversation</h3>
+                <p>A free, no-obligation chat to see how we can help you achieve financial clarity.</p>
+            </div>
+            <div class="modal-form-panel">
+                <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+                <h3 id="consultation-modal-title">Book a Free Consultation</h3>
+                <form class="modal-form" novalidate>
+                    <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
+                    <div class="form-group"><label for="modal-name">Full Name</label><input type="text" id="modal-name" name="name" required></div>
+                    <div class="form-group"><label for="modal-email">Email</label><input type="email" id="modal-email" name="email" required></div>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <p class="form-status" role="status"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+
+    <script>
+        // Main App Initializer
+        class WisetaxApp {
+            constructor() {
+                this.initComponents();
+                this.initEventListeners();
+            }
+
+            initComponents() {
+                // Initialize all interactive components
+                this.mobileNav = new MobileNav();
+                this.themeToggle = new ThemeToggle();
+                this.backToTop = new BackToTop();
+                this.scrollAnimations = new ScrollAnimations();
+                this.statsCounter = new StatsCounter();
+                this.faqAccordion = new FAQAccordion();
+                this.modalSystem = new ModalSystem();
+                this.formHandler = new FormHandler();
+
+                if (document.querySelector('.testimonial-slider-wrapper')) {
+                    this.testimonialSlider = new ModernSlider('.testimonial-slider-wrapper');
+                }
+            }
+            
+            initEventListeners() {
+                // Hide header on scroll down, show on scroll up
+                let lastScrollTop = 0;
+                const header = document.querySelector('.main-header');
+                window.addEventListener('scroll', () => {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                        header.classList.add('hidden');
+                    } else {
+                        header.classList.remove('hidden');
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                }, { passive: true });
+            }
+        }
+
+        // --- COMPONENT CLASSES ---
+
+        class MobileNav {
+            constructor() {
+                this.hamburger = document.querySelector('.hamburger');
+                this.navLinks = document.querySelector('.nav-links');
+                if (!this.hamburger || !this.navLinks) return;
+                
+                this.hamburger.addEventListener('click', this.toggleNav.bind(this));
+            }
+
+            toggleNav() {
+                const isActive = this.navLinks.classList.toggle('nav-active');
+                this.hamburger.setAttribute('aria-expanded', isActive);
+            }
+        }
+
+        class ThemeToggle {
+            constructor() {
+                this.toggleButton = document.querySelector('.theme-toggle');
+                if (!this.toggleButton) return;
+
+                this.themeIcon = this.toggleButton.querySelector('i');
+                this.initTheme();
+                this.toggleButton.addEventListener('click', this.toggleTheme.bind(this));
+            }
+
+            initTheme() {
+                const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                this.setTheme(savedTheme);
+            }
+
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                this.setTheme(newTheme);
+            }
+
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                this.themeIcon.classList.toggle('fa-sun', theme === 'dark');
+                this.themeIcon.classList.toggle('fa-moon', theme === 'light');
+            }
+        }
+        
+        class BackToTop {
+            constructor() {
+                this.button = document.querySelector('.back-to-top');
+                if (!this.button) return;
+                
+                window.addEventListener('scroll', this.checkScroll.bind(this), { passive: true });
+                this.button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
+            
+            checkScroll() {
+                this.button.classList.toggle('show', window.scrollY > 300);
+            }
+        }
+
+        class ScrollAnimations {
+            constructor() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            }
+        }
+
+        class StatsCounter {
+            constructor() {
+                const statsGrid = document.querySelector('.stats-grid');
+                if (!statsGrid) return;
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.animateCounters(entry.target);
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                observer.observe(statsGrid);
+            }
+            
+            animateCounters(grid) {
+                const counters = grid.querySelectorAll('.stat-number');
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let current = 0;
+                    const update = () => {
+                        const increment = Math.ceil(target / 100);
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(update);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    update();
+                });
+            }
+        }
+
+        class ModernSlider {
+            constructor(selector) {
+                this.sliderWrapper = document.querySelector(selector);
+                if (!this.sliderWrapper) return;
+                
+                this.slider = this.sliderWrapper.querySelector('.testimonial-slider');
+                this.originalSlides = Array.from(this.slider.children);
+                this.prevBtn = this.sliderWrapper.querySelector('.prev-slide');
+                this.nextBtn = this.sliderWrapper.querySelector('.next-slide');
+                this.dotsContainer = this.sliderWrapper.querySelector('.slider-dots');
+                
+                if (this.originalSlides.length <= 1) return;
+
+                this.isTransitioning = false;
+                this.transitionDuration = 400; // ms, should match CSS if any
+                
+                this.init();
+            }
+
+            init() {
+                // Clone first and last slides for infinite effect
+                const firstClone = this.originalSlides[0].cloneNode(true);
+                firstClone.dataset.clone = true;
+                firstClone.setAttribute('aria-hidden', 'true');
+                const lastClone = this.originalSlides[this.originalSlides.length - 1].cloneNode(true);
+                lastClone.dataset.clone = true;
+                lastClone.setAttribute('aria-hidden', 'true');
+
+                this.slider.appendChild(firstClone);
+                this.slider.insertBefore(lastClone, this.originalSlides[0]);
+                
+                this.slides = Array.from(this.slider.children);
+                this.currentIndex = 1; // Start at the first real slide
+
+                this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+
+                this.createDots();
+                
+                this.nextBtn.addEventListener('click', () => this.moveToSlide(this.currentIndex + 1));
+                this.prevBtn.addEventListener('click', () => this.moveToSlide(this.currentIndex - 1));
+                
+                this.sliderWrapper.addEventListener('mouseenter', () => this.stopAutoPlay());
+                this.sliderWrapper.addEventListener('mouseleave', () => this.startAutoPlay());
+                this.sliderWrapper.querySelectorAll('button').forEach(btn => {
+                     btn.addEventListener('focus', () => this.stopAutoPlay());
+                     btn.addEventListener('blur', () => this.startAutoPlay());
+                });
+
+                this.startAutoPlay();
+            }
+            
+            startAutoPlay() {
+                this.stopAutoPlay();
+                this.autoPlayInterval = setInterval(() => this.moveToSlide(this.currentIndex + 1), 5000);
+            }
+
+            stopAutoPlay() {
+                clearInterval(this.autoPlayInterval);
+            }
+
+            createDots() {
+                this.originalSlides.forEach((_, i) => {
+                    const button = document.createElement('button');
+                    button.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    button.addEventListener('click', () => this.moveToSlide(i + 1));
+                    this.dotsContainer.appendChild(button);
+                });
+                this.dots = Array.from(this.dotsContainer.children);
+                this.updateDots();
+            }
+
+            moveToSlide(index) {
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
+                
+                this.slider.style.transition = `transform ${this.transitionDuration}ms ease-in-out`;
+                this.currentIndex = index;
+                this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                
+                this.updateDots();
+                this.startAutoPlay();
+                
+                // Use setTimeout to handle the loop logic after animation
+                setTimeout(() => {
+                    this.handleLoop();
+                    this.isTransitioning = false;
+                }, this.transitionDuration);
+            }
+
+            handleLoop() {
+                if (this.currentIndex <= 0) { // If on the prepended clone
+                    this.slider.style.transition = 'none';
+                    this.currentIndex = this.originalSlides.length;
+                    this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                }
+
+                if (this.currentIndex >= this.slides.length - 1) { // If on the appended clone
+                    this.slider.style.transition = 'none';
+                    this.currentIndex = 1;
+                    this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                }
+            }
+
+            updateDots() {
+                let dotIndex;
+                if (this.currentIndex === 0) {
+                    dotIndex = this.originalSlides.length - 1;
+                } else if (this.currentIndex === this.slides.length - 1) {
+                    dotIndex = 0;
+                } else {
+                    dotIndex = this.currentIndex - 1;
+                }
+                this.dots.forEach((dot, i) => dot.classList.toggle('active', i === dotIndex));
+            }
+        }
+
+        class FAQAccordion {
+            constructor() {
+                this.accordion = document.querySelector('.faq-accordion');
+                if (!this.accordion) return;
+                
+                this.accordion.addEventListener('click', e => {
+                    const question = e.target.closest('.faq-question');
+                    if (question) {
+                        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                        question.setAttribute('aria-expanded', !isExpanded);
+                    }
+                });
+            }
+        }
+
+        class ModalSystem {
+            constructor() {
+                this.modals = document.querySelectorAll('.modal-overlay');
+                this.openButtons = document.querySelectorAll('#open-modal-btn');
+                this.focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+                
+                this.init();
+            }
+
+            init() {
+                this.openButtons.forEach(btn => btn.addEventListener('click', () => this.openModal(document.getElementById('consultation-modal'))));
+                
+                this.modals.forEach(modal => {
+                    modal.addEventListener('click', e => {
+                        if (e.target === modal || e.target.closest('.modal-close-btn')) this.closeModal(modal);
+                    });
+                });
+                
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape') {
+                        const openModal = document.querySelector('.modal-overlay.show');
+                        if (openModal) this.closeModal(openModal);
+                    }
+                });
+            }
+
+            openModal(modal) {
+                modal.removeAttribute('hidden');
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+
+                this.trapFocus(modal);
+            }
+
+            closeModal(modal) {
+                modal.classList.remove('show');
+                modal.setAttribute('hidden', true);
+                document.body.style.overflow = '';
+                
+                if(this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
+            }
+            
+            trapFocus(modal) {
+                this.previouslyFocusedElement = document.activeElement;
+                const focusableContent = modal.querySelectorAll(this.focusableElements);
+                const firstFocusable = focusableContent[0];
+                const lastFocusable = focusableContent[focusableContent.length - 1];
+
+                firstFocusable.focus();
+
+                modal.addEventListener('keydown', e => {
+                    if (e.key !== 'Tab') return;
+
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusable) {
+                            lastFocusable.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusable) {
+                            firstFocusable.focus();
+                            e.preventDefault();
+                        }
+                    }
+                });
+            }
+        }
+        
+        class FormHandler {
+            constructor() {
+                document.querySelectorAll('#contact-form, .modal-form').forEach(form => {
+                    form.addEventListener('submit', this.handleFormSubmit.bind(this));
+                });
+            }
+            
+            async handleFormSubmit(event) {
+                event.preventDefault();
+                const form = event.target;
+                const statusElement = form.querySelector('.form-status');
+                const submitButton = form.querySelector('button[type="submit"]');
+
+                form.classList.add('loading');
+                submitButton.disabled = true;
+                statusElement.textContent = 'Sending...';
+
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => { object[key] = value; });
+                const json = JSON.stringify(object);
+
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        body: json
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        statusElement.textContent = result.message || "Success! We'll be in touch soon.";
+                        statusElement.style.color = 'green';
+                        form.reset();
+                    } else {
+                        throw new Error(result.message || 'An error occurred.');
+                    }
+                } catch (error) {
+                    statusElement.textContent = error.message;
+                    statusElement.style.color = 'red';
+                } finally {
+                    form.classList.remove('loading');
+                    submitButton.disabled = false;
+                    setTimeout(() => { statusElement.textContent = ''; }, 5000);
+                }
+            }
+        }
+        
+        // --- INITIALIZE THE APP ---
+        document.addEventListener('DOMContentLoaded', () => {
+            new WisetaxApp();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <!-- =================================================================
+    METADATA & PERFORMANCE HINTS
+    ================================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Wisetax Accountants</title>
+    <meta name="description" content="Get in touch with Wisetax Accountants for a free consultation. We are located in Slough and ready to assist with your accounting needs.">
+    <meta name="keywords" content="contact wisetax, accountants slough, financial consultation, business advisory, contact form, tax advice">
+    <meta name="author" content="Wisetax Accountants">
+
+    <!-- PWA & Theme Color -->
+    <meta name="theme-color" content="#001F3F">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.web3forms.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Contact Us | Wisetax Accountants">
+    <meta property="og:description" content="Reach out to our team of financial experts in Slough today.">
+    <meta property="og:image" content="https://placehold.co/1200x630/001f3f/ffffff?text=Contact+Wisetax">
+    <meta property="og:url" content="https://www.wisetax.co.uk/contact.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="wisetax-logo.jpg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* =================================================================
+        CRITICAL CSS (INLINE FOR PERFORMANCE)
+        ================================================================== */
+        :root {
+            /* Color Palette */
+            --primary-color: #001F3F; /* Deep Navy Blue */
+            --accent-color: #3B82F6; /* Light Blue */
+            --background-color: #FFFFFF; /* Crisp White */
+            --surface-color: #F5F5F5; /* Subtle Gray */
+            --text-color: #333333;
+            --text-muted-color: #6c757d;
+
+            /* Typography */
+            --heading-font: 'Montserrat', sans-serif;
+            --body-font: 'Open Sans', sans-serif;
+
+            /* Fluid Sizing (Modern CSS) */
+            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --font-size-h1: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+            --font-size-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+            --space-section: clamp(4rem, 2rem + 10vw, 8rem);
+            --space-content: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+
+            /* Other Variables */
+            --transition-speed: 0.3s;
+            --border-radius: 10px;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #FFFFFF;
+            --accent-color: #3B82F6;
+            --background-color: #121212;
+            --surface-color: #1E1E1E;
+            --text-color: #E0E0E0;
+            --text-muted-color: #A9A9A9;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        html { scroll-behavior: smooth; font-size: 100%; }
+        body {
+            font-family: var(--body-font);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: var(--font-size-base);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
+        h1, h2, h3, h4 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 1rem; line-height: 1.2; }
+        h1 { font-size: var(--font-size-h1); }
+        h2 { font-size: var(--font-size-h2); }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.2rem; }
+        p { margin-bottom: 1rem; max-width: 75ch; }
+        section { padding: var(--space-section) 0; }
+
+        /* Accessibility: Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            z-index: 9999;
+            transition: top 0.3s ease-in-out;
+            text-decoration: none;
+            border-bottom-right-radius: 8px;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color var(--transition-speed), transform 0.3s ease-out;
+            transform: translateY(0);
+        }
+        .main-header.hidden {
+            transform: translateY(-100%);
+        }
+        [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
+        .nav-links a {
+            color: var(--text-color); text-decoration: none; font-weight: 600;
+            position: relative; padding-bottom: 5px;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+            background-color: var(--accent-color); transition: width var(--transition-speed) ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        /* Hero Section (Reused from index.txt & services.txt) */
+        #hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
+        }
+        .hero-video-wrapper {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+            background-color: var(--primary-color); /* Fallback color */
+        }
+        #hero-video {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        #hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.7)); z-index: -1;
+        }
+        .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
+        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+        /* Animation */
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =================================================================
+        DEFERRABLE CSS
+        ================================================================== */
+
+        /* General Components */
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+        .btn {
+            display: inline-block; padding: 12px 28px; border-radius: 50px;
+            text-decoration: none; font-weight: 600; transition: all var(--transition-speed);
+            cursor: pointer; border: 2px solid transparent; font-size: 1rem;
+        }
+        .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
+        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
+        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Mobile Navigation */
+        .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
+        .hamburger .bar {
+            display: block; width: 25px; height: 3px; margin: 5px auto;
+            background-color: var(--primary-color); transition: all var(--transition-speed) ease-in-out;
+            border-radius: 3px;
+        }
+        [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
+
+        /* Contact Section (from index.txt & services.txt) */
+        #contact { background-color: var(--surface-color); }
+        .contact-grid {
+            display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;
+            background-color: var(--background-color); padding: var(--space-content); border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Added subtle shadow for better separation */
+        }
+        .form-row { display: flex; gap: 1rem; }
+        .form-group { margin-bottom: 1.5rem; flex: 1; }
+        .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            width: 100%; padding: 1rem; border-radius: 5px; border: 1px solid #ccc;
+            background-color: var(--surface-color); /* Updated background color to match form container */
+            color: var(--text-color);
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+            outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+        .contact-info { 
+            padding-left: 2rem; 
+            border-left: 2px solid var(--accent-color); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .contact-info i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+        .contact-info a { color: inherit; text-decoration: none; transition: color var(--transition-speed); }
+        .contact-info a:hover { color: var(--accent-color); }
+        #map-embed { margin-top: 2rem; width: 100%; height: 250px; border-radius: var(--border-radius); border: 0; }
+        [data-theme="light"] #map-embed { filter: grayscale(1); }
+        [data-theme="dark"] #map-embed { filter: invert(1) grayscale(1); }
+        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
+        form.loading .btn {
+            cursor: wait;
+            background-color: var(--text-muted-color);
+            border-color: var(--text-muted-color);
+        }
+        form.loading .btn::after {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-left-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
+        [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem; margin-bottom: 3rem;
+        }
+        .footer-grid h4 { color: #fff; }
+        [data-theme="dark"] .footer-grid h4 { color: var(--accent-color); }
+        .footer-grid p, .footer-grid li, .footer-grid a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-speed); }
+        .footer-grid a:hover { color: #fff; }
+        .footer-grid ul { list-style: none; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a { font-size: 1.5rem; color: #fff; }
+        .social-links a:hover { color: var(--accent-color); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom a { color: #fff; }
+
+        /* Utility Buttons */
+        .back-to-top, .theme-toggle {
+            position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
+            background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+            cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden;
+            transition: opacity var(--transition-speed), visibility var(--transition-speed), transform var(--transition-speed);
+        }
+        .back-to-top:hover, .theme-toggle:hover { transform: scale(1.1); }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
+
+        /* Modal System */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
+            visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed);
+        }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-content {
+            background-color: var(--background-color); border-radius: 15px; max-width: 800px; width: 95%;
+            position: relative; transform: scale(0.95);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .modal-overlay.show .modal-content { transform: scale(1); }
+        .modal-info-panel { background-color: var(--primary-color); color: #fff; padding: 3rem; width: 40%; }
+        [data-theme="dark"] .modal-info-panel { background-color: var(--surface-color); }
+        .modal-info-panel h3 { color: #fff; font-size: 1.8rem; }
+        .modal-info-panel ul { list-style: none; }
+        .modal-info-panel li i { color: var(--accent-color); margin-right: 10px; width: 20px; }
+        .modal-form-panel { padding: 3rem; width: 60%; }
+        .modal-close-btn {
+            position: absolute; top: 15px; right: 20px; background: none; border: none;
+            font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
+        }
+
+        /* Form States */
+        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
+        form.loading .btn {
+            cursor: wait;
+            background-color: var(--text-muted-color);
+            border-color: var(--text-muted-color);
+        }
+        form.loading .btn::after {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-left-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
+                background-color: var(--background-color); flex-direction: column; justify-content: center;
+                align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
+                transform: translateX(100%);
+            }
+            .nav-links.nav-active { transform: translateX(0); }
+            .hamburger { display: block; }
+            .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+            .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+            .hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-info { border-left: none; padding-left: 0; margin-top: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .hero-content p { font-size: 1rem; }
+            .footer-grid { text-align: center; }
+            .social-links { justify-content: center; }
+            .modal-content {
+                flex-direction: column; max-width: 500px;
+                max-height: 90vh; overflow-y: auto;
+            }
+            .modal-info-panel, .modal-form-panel { width: 100%; padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Wisetax Accountants</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
+            </ul>
+            <div class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-video-wrapper">
+                <video autoplay loop muted playsinline preload="metadata" id="hero-video" poster="https://placehold.co/1920x1080/001f3f/001f3f.webp?text=+" width="1920" height="1080">
+                    <source src="wisetax-hero.webm" type="video/webm">
+                    <source src="wisetax-hero.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="hero-content">
+                <h1>Get In Touch With Our Team</h1>
+                <p>We're ready to help you achieve your financial goals. Contact us for a free, no-obligation chat.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">Send a Message</a>
+                    <a href="tel:07533686857" class="btn btn-secondary">Call Us Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                 <div class="section-header">
+                    <h2 class="fade-in">Ready to Simplify Your Finances?</h2>
+                    <p class="fade-in">Contact us today for a free, no-obligation consultation.</p>
+                </div>
+                <div class="contact-grid fade-in">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form" novalidate>
+                        <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
+                        <input type="hidden" name="subject" value="New Contact Form Submission from Wisetax Website">
+                        <div class="form-row">
+                            <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
+                            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone"></div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" name="service">
+                                    <option value="General Enquiry">General Enquiry</option>
+                                    <option value="Self-Assessment Tax Return">Self-Assessment Tax Return</option>
+                                    <option value="Company Accounts & Tax">Company Accounts & Tax</option>
+                                    <option value="Bookkeeping & VAT">Bookkeeping & VAT</option>
+                                    <option value="Growth Advisory">Growth Advisory</option>
+                                    <option value="Payroll Services">Payroll Services</option>
+                                    <option value="Company Formation">Company Formation</option>
+                                    <option value="ATOL Certified Accountant">ATOL Certified Accountant</option>
+                                    <option value="Tax Planning">Tax Planning</option>
+                                    <option value="Mortgage & Property Finance">Mortgage & Property Finance</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" rows="5" required placeholder="Tell us about your business..."></textarea></div>
+                        <button type="submit" class="btn btn-primary">Send Secure Message</button>
+                        <p class="form-status" role="status"></p>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Contact Details</h3>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
+                    </div>
+                </div>
+                <iframe id="map-embed" class="fade-in" title="Wisetax Accountants Location" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c6838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
+                <div><h4>Quick Links</h4><ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul></div>
+                <div><h4>Contact Us</h4>
+                    <p>1st floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
+                    <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
+                    <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
+                </div>
+                <div><h4>Connect With Us</h4><div class="social-links">
+                    <a href="https://uk.linkedin.com/company/wisetax-accountants-uk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/wisetaxuk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/WisetaxUK" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Wisetax Accountants | All Rights Reserved | <a href="privacy.html">Privacy Notice</a></p></div>
+        </div>
+    </footer>
+
+    <!-- Consultation Modal (Reused from index.txt & services.txt) -->
+    <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title" hidden>
+        <div class="modal-content">
+            <div class="modal-info-panel">
+                <h3>Start the Conversation</h3>
+                <p>A free, no-obligation chat to see how we can help you achieve financial clarity.</p>
+            </div>
+            <div class="modal-form-panel">
+                <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+                <h3 id="consultation-modal-title">Book a Free Consultation</h3>
+                <form class="modal-form" novalidate>
+                    <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
+                    <div class="form-group"><label for="modal-name">Full Name</label><input type="text" id="modal-name" name="name" required></div>
+                    <div class="form-group"><label for="modal-email">Email</label><input type="email" id="modal-email" name="email" required></div>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <p class="form-status" role="status"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+
+    <script>
+        // Main App Initializer
+        class WisetaxApp {
+            constructor() {
+                this.initComponents();
+                this.initEventListeners();
+            }
+
+            initComponents() {
+                this.mobileNav = new MobileNav();
+                this.themeToggle = new ThemeToggle();
+                this.backToTop = new BackToTop();
+                this.scrollAnimations = new ScrollAnimations();
+                this.modalSystem = new ModalSystem();
+                this.formHandler = new FormHandler();
+            }
+
+            initEventListeners() {
+                let lastScrollTop = 0;
+                const header = document.querySelector('.main-header');
+                window.addEventListener('scroll', () => {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+                        header.classList.add('hidden');
+                    } else {
+                        header.classList.remove('hidden');
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                }, { passive: true });
+            }
+        }
+
+        // --- COMPONENT CLASSES (Reused from index.txt & services.txt) ---
+
+        class MobileNav {
+            constructor() {
+                this.hamburger = document.querySelector('.hamburger');
+                this.navLinks = document.querySelector('.nav-links');
+                if (!this.hamburger || !this.navLinks) return;
+
+                this.hamburger.addEventListener('click', this.toggleNav.bind(this));
+            }
+
+            toggleNav() {
+                const isActive = this.navLinks.classList.toggle('nav-active');
+                this.hamburger.setAttribute('aria-expanded', isActive);
+            }
+        }
+
+        class ThemeToggle {
+            constructor() {
+                this.toggleButton = document.querySelector('.theme-toggle');
+                if (!this.toggleButton) return;
+
+                this.themeIcon = this.toggleButton.querySelector('i');
+                this.initTheme();
+                this.toggleButton.addEventListener('click', this.toggleTheme.bind(this));
+            }
+
+            initTheme() {
+                const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                this.setTheme(savedTheme);
+            }
+
+            toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                this.setTheme(newTheme);
+            }
+
+            setTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                this.themeIcon.classList.toggle('fa-sun', theme === 'dark');
+                this.themeIcon.classList.toggle('fa-moon', theme === 'light');
+            }
+        }
+
+        class BackToTop {
+            constructor() {
+                this.button = document.querySelector('.back-to-top');
+                if (!this.button) return;
+
+                window.addEventListener('scroll', this.checkScroll.bind(this), { passive: true });
+                this.button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
+
+            checkScroll() {
+                this.button.classList.toggle('show', window.scrollY > 300);
+            }
+        }
+
+        class ScrollAnimations {
+            constructor() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            }
+        }
+        
+        class ModalSystem {
+            constructor() {
+                this.modals = document.querySelectorAll('.modal-overlay');
+                this.openButtons = document.querySelectorAll('#open-modal-btn, #open-modal-btn-hero, #open-modal-btn-cta');
+                this.focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+                this.init();
+            }
+
+            init() {
+                this.openButtons.forEach(btn => btn.addEventListener('click', () => this.openModal(document.getElementById('consultation-modal'))));
+
+                this.modals.forEach(modal => {
+                    modal.addEventListener('click', e => {
+                        if (e.target === modal || e.target.closest('.modal-close-btn')) this.closeModal(modal);
+                    });
+                });
+
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape') {
+                        const openModal = document.querySelector('.modal-overlay.show');
+                        if (openModal) this.closeModal(openModal);
+                    }
+                });
+            }
+
+            openModal(modal) {
+                modal.removeAttribute('hidden');
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+
+                this.trapFocus(modal);
+            }
+
+            closeModal(modal) {
+                modal.classList.remove('show');
+                modal.setAttribute('hidden', true);
+                document.body.style.overflow = '';
+
+                if(this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
+            }
+
+            trapFocus(modal) {
+                this.previouslyFocusedElement = document.activeElement;
+                const focusableContent = modal.querySelectorAll(this.focusableElements);
+                const firstFocusable = focusableContent[0];
+                const lastFocusable = focusableContent[focusableContent.length - 1];
+
+                firstFocusable.focus();
+
+                modal.addEventListener('keydown', e => {
+                    if (e.key !== 'Tab') return;
+
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstFocusable) {
+                            lastFocusable.focus();
+                            e.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastFocusable) {
+                            firstFocusable.focus();
+                            e.preventDefault();
+                        }
+                    }
+                });
+            }
+        }
+
+        class FormHandler {
+            constructor() {
+                document.querySelectorAll('#contact-form, .modal-form').forEach(form => {
+                    form.addEventListener('submit', this.handleFormSubmit.bind(this));
+                });
+            }
+
+            async handleFormSubmit(event) {
+                event.preventDefault();
+                const form = event.target;
+                const statusElement = form.querySelector('.form-status');
+                const submitButton = form.querySelector('button[type="submit"]');
+
+                form.classList.add('loading');
+                submitButton.disabled = true;
+                statusElement.textContent = 'Sending...';
+
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => { object[key] = value; });
+                const json = JSON.stringify(object);
+
+                try {
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                        body: json
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        statusElement.textContent = result.message || "Success! We'll be in touch soon.";
+                        statusElement.style.color = 'green';
+                        form.reset();
+                    } else {
+                        throw new Error(result.message || 'An error occurred.');
+                    }
+                } catch (error) {
+                    statusElement.textContent = error.message;
+                    statusElement.style.color = 'red';
+                } finally {
+                    form.classList.remove('loading');
+                    submitButton.disabled = false;
+                    setTimeout(() => { statusElement.textContent = '', statusElement.style.color = ''; }, 5000);
+                }
+            }
+        }
+
+        // --- INITIALIZE THE APP ---
+        document.addEventListener('DOMContentLoaded', () => {
+            new WisetaxApp();
+        });
+    </script>
+</body>
+</html>
