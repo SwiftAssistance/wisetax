@@ -99,6 +99,10 @@
             transition: background-color var(--transition-speed), color var(--transition-speed);
             overflow-x: hidden;
         }
+        
+        body.nav-open {
+            overflow: hidden;
+        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
         h1, h2, h3, h4 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 1rem; line-height: 1.2; }
@@ -199,13 +203,21 @@
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         /* Mobile Navigation */
-        .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
+        .hamburger { display: none; cursor: pointer; z-index: 1003; background: none; border: none; padding: 0.5rem; }
         .hamburger .bar {
             display: block; width: 25px; height: 3px; margin: 5px auto;
             background-color: var(--primary-color); transition: all var(--transition-speed) ease-in-out;
             border-radius: 3px;
         }
         [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
+
+        .nav-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); z-index: 1001;
+            opacity: 0; visibility: hidden;
+            transition: opacity var(--transition-speed) ease-in-out, visibility var(--transition-speed) ease-in-out;
+        }
+        .nav-overlay.nav-active { opacity: 1; visibility: visible; }
 
         /* New Services Section with clickable boxes */
         #services { background-color: var(--surface-color); }
@@ -463,13 +475,17 @@
         /* Responsive Design */
         @media (max-width: 992px) {
             .nav-links {
-                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
+                position: fixed; top: 0; right: 0;
+                transform: translateX(100%);
+                width: 70%; max-width: 300px; height: 100vh;
                 background-color: var(--background-color); flex-direction: column; justify-content: center;
                 align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
-                transform: translateX(100%);
+                transition: transform var(--transition-speed) ease-in-out;
+                z-index: 1002;
             }
-            .nav-links.nav-active { transform: translateX(0); }
+            .nav-links.nav-active {
+                transform: translateX(0);
+            }
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
@@ -495,18 +511,19 @@
     <header class="main-header">
         <nav class="navbar container">
             <a href="index.html" class="logo">Wisetax Accountants</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
             </ul>
-            <div class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false">
+             <div class="nav-overlay"></div>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -877,14 +894,19 @@
             constructor() {
                 this.hamburger = document.querySelector('.hamburger');
                 this.navLinks = document.querySelector('.nav-links');
-                if (!this.hamburger || !this.navLinks) return;
-
+                this.overlay = document.querySelector('.nav-overlay');
+                if (!this.hamburger || !this.navLinks || !this.overlay) return;
+                
                 this.hamburger.addEventListener('click', this.toggleNav.bind(this));
+                this.overlay.addEventListener('click', this.toggleNav.bind(this));
             }
 
             toggleNav() {
-                const isActive = this.navLinks.classList.toggle('nav-active');
+                this.navLinks.classList.toggle('nav-active');
+                this.overlay.classList.toggle('nav-active');
+                const isActive = this.navLinks.classList.contains('nav-active');
                 this.hamburger.setAttribute('aria-expanded', isActive);
+                document.body.classList.toggle('nav-open', isActive);
             }
         }
 
