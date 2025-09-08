@@ -44,26 +44,19 @@
         CRITICAL CSS (INLINE FOR PERFORMANCE)
         ================================================================== */
         :root {
-            /* Color Palette */
-            --primary-color: #001F3F; /* Deep Navy Blue */
-            --accent-color: #3B82F6; /* Light Blue */
-            --background-color: #FFFFFF; /* Crisp White */
-            --surface-color: #F5F5F5; /* Subtle Gray */
+            --primary-color: #001F3F;
+            --accent-color: #3B82F6;
+            --background-color: #FFFFFF;
+            --surface-color: #F5F5F5;
             --text-color: #333333;
             --text-muted-color: #6c757d;
-
-            /* Typography */
             --heading-font: 'Montserrat', sans-serif;
             --body-font: 'Open Sans', sans-serif;
-
-            /* Fluid Sizing (Modern CSS) */
             --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
             --font-size-h1: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
             --font-size-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
             --space-section: clamp(4rem, 2rem + 10vw, 8rem);
             --space-content: clamp(1.5rem, 1rem + 2.5vw, 3rem);
-
-            /* Other Variables */
             --transition-speed: 0.3s;
             --border-radius: 10px;
         }
@@ -100,10 +93,6 @@
             overflow-x: hidden;
         }
         
-        body.nav-open {
-            overflow: hidden;
-        }
-
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
         h1, h2, h3, h4 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 1rem; line-height: 1.2; }
         h1 { font-size: var(--font-size-h1); }
@@ -113,24 +102,15 @@
         p { margin-bottom: 1rem; max-width: 75ch; }
         section { padding: var(--space-section) 0; }
 
-        /* Accessibility: Skip Link */
         .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 0;
-            background: var(--accent-color);
-            color: white;
-            padding: 8px 16px;
-            z-index: 9999;
-            transition: top 0.3s ease-in-out;
-            text-decoration: none;
+            position: absolute; top: -100%; left: 0;
+            background: var(--accent-color); color: white;
+            padding: 8px 16px; z-index: 9999;
+            transition: top 0.3s ease-in-out; text-decoration: none;
             border-bottom-right-radius: 8px;
         }
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link:focus { top: 0; }
 
-        /* Header */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
             background-color: rgba(255, 255, 255, 0.8);
@@ -139,9 +119,7 @@
             transition: background-color var(--transition-speed), transform 0.3s ease-out;
             transform: translateY(0);
         }
-        .main-header.hidden {
-            transform: translateY(-100%);
-        }
+        .main-header.hidden { transform: translateY(-100%); }
         [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
@@ -156,28 +134,36 @@
         }
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-        /* Hero Section */
         #hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
         }
         .hero-video-wrapper {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-            background-color: var(--primary-color); /* Fallback color */
+            background-color: var(--primary-color);
         }
         #hero-video {
             width: 100%; height: 100%; object-fit: cover;
         }
-        #hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.7)); z-index: -1;
+        .hero-content { 
+            max-width: 800px; 
+            animation: fade-in-up 1s ease-out forwards;
+            position: relative;
+            z-index: 1;
         }
-        .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
-        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero-content h1 { 
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .hero-content p { 
+            font-size: 1.2rem; 
+            margin-bottom: 2rem; 
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+        }
         .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-
-        /* Animation */
+        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
+        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
+        
         @keyframes fade-in-up {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -187,7 +173,6 @@
         DEFERRABLE CSS
         ================================================================== */
 
-        /* General Components */
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
         .btn {
             display: inline-block; padding: 12px 28px; border-radius: 50px;
@@ -196,14 +181,11 @@
         }
         .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
         .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
-        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
-        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
 
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* Mobile Navigation */
-        .hamburger { display: none; cursor: pointer; z-index: 1003; background: none; border: none; padding: 0.5rem; }
+        .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
         .hamburger .bar {
             display: block; width: 25px; height: 3px; margin: 5px auto;
             background-color: var(--primary-color); transition: all var(--transition-speed) ease-in-out;
@@ -211,23 +193,14 @@
         }
         [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
 
-        .nav-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); z-index: 1001;
-            opacity: 0; visibility: hidden;
-            transition: opacity var(--transition-speed) ease-in-out, visibility var(--transition-speed) ease-in-out;
-        }
-        .nav-overlay.nav-active { opacity: 1; visibility: visible; }
-
-        /* New Services Section with clickable boxes */
-        #services { background-color: var(--surface-color); }
+        #services { background-color: var(--background-color); }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         .service-box {
-            background-color: var(--background-color);
+            background-color: var(--surface-color);
             border-radius: var(--border-radius);
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             transition: transform var(--transition-speed), box-shadow var(--transition-speed);
@@ -245,25 +218,13 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.1);
         }
         .service-box .icon-wrapper {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--accent-color);
-            border-radius: 50%;
+            width: 70px; height: 70px; margin-bottom: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            background-color: var(--accent-color); border-radius: 50%;
         }
-        .service-box .icon-wrapper i {
-            font-size: 2.5rem;
-            color: #fff;
-        }
-        .service-box h3 {
-            margin: 0 0 0.5rem;
-            color: var(--primary-color);
-        }
+        .service-box .icon-wrapper i { font-size: 2.5rem; color: #fff; }
+        .service-box h3 { margin: 0 0 0.5rem; color: var(--primary-color); }
         
-        /* New Step-by-Step Section */
         #process { background-color: var(--surface-color); }
         .process-grid {
             display: flex;
@@ -272,123 +233,50 @@
             gap: 1.5rem;
             text-align: center;
             flex-wrap: wrap;
+            position: relative;
         }
         .process-step {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 1 1 200px;
+            position: relative;
         }
         .process-number {
-            font-family: var(--heading-font);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            line-height: 1;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
+            font-family: var(--heading-font); font-size: 1.8rem; font-weight: 700;
+            color: var(--accent-color); line-height: 1;
+            position: relative; display: flex; align-items: center; justify-content: center;
+            width: 70px; height: 70px; border-radius: 50%;
             border: 2px solid var(--primary-color);
             background-color: var(--background-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1rem; z-index: 1;
         }
-        .process-number::after {
+        .process-grid::before {
             content: '';
             position: absolute;
-            left: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 2px;
-            background-color: var(--text-muted-color);
-            z-index: -1;
+            left: 15%; top: 35px;
+            width: 70%; height: 2px;
+            background-color: #ddd;
+            z-index: 0;
         }
-        .process-grid .process-step:last-child .process-number::after {
-            display: none;
-        }
-        .process-step h4 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-        }
+        .process-step h4 { margin-top: 0; margin-bottom: 0.5rem; }
 
-        /* Industries Section - New Design */
         #industries { background-color: var(--background-color); }
         .industries-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 3rem; align-items: center;
         }
-        .industries-text {
-            border-left: 2px solid var(--accent-color);
-            padding-left: 2rem;
-        }
+        .industries-text { border-left: 2px solid var(--accent-color); padding-left: 2rem; }
         .industries-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            list-style: none; padding: 0;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
         }
         .industries-list li {
-            font-weight: 600;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-weight: 600; color: var(--primary-color);
+            display: flex; align-items: center; gap: 10px;
         }
-        .industries-list li i {
-            color: var(--accent-color);
-        }
-
-        /* Contact Section */
-        #contact { background-color: var(--background-color); }
-        .contact-grid {
-            display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;
-            background-color: var(--surface-color); padding: var(--space-content); border-radius: var(--border-radius);
-        }
-        .form-row { display: flex; gap: 1rem; }
-        .form-group { margin-bottom: 1.5rem; flex: 1; }
-        .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
-        .contact-form input, .contact-form textarea, .contact-form select {
-            width: 100%; padding: 1rem; border-radius: 5px; border: 1px solid #ccc;
-            background-color: var(--background-color); color: var(--text-color);
-            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-        }
-        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
-            outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
-        }
-        .contact-info { padding-left: 2rem; border-left: 2px solid var(--accent-color); }
-        .contact-info a { color: inherit; text-decoration: none; transition: color var(--transition-speed); }
-        .contact-info a:hover { color: var(--accent-color); }
-        #map-embed { margin-top: 2rem; width: 100%; height: 250px; border-radius: var(--border-radius); border: 0; }
-        [data-theme="light"] #map-embed { filter: grayscale(1); }
-        [data-theme="dark"] #map-embed { filter: invert(1) grayscale(1); }
-        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
-        form.loading .btn {
-            cursor: wait;
-            background-color: var(--text-muted-color);
-            border-color: var(--text-muted-color);
-        }
-        form.loading .btn::after {
-            content: '';
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            border: 2px solid rgba(255,255,255,0.5);
-            border-left-color: #fff;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* Footer */
+        .industries-list li i { color: var(--accent-color); }
+        
         .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
         [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
         .footer-grid {
@@ -406,7 +294,6 @@
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         .footer-bottom a { color: #fff; }
 
-        /* Utility Buttons */
         .back-to-top, .theme-toggle {
             position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
             background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
@@ -418,7 +305,6 @@
         .back-to-top.show { opacity: 1; visibility: visible; }
         .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
 
-        /* Modal System */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
             z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
@@ -430,7 +316,7 @@
             position: relative; transform: scale(0.95);
             transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); max-height: 90vh; overflow-y: auto;
         }
         .modal-overlay.show .modal-content { transform: scale(1); }
         .modal-close-btn {
@@ -438,71 +324,43 @@
             font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
         }
         .modal-content h3 {
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--primary-color);
+            margin-top: 0; display: flex; align-items: center;
+            gap: 1rem; color: var(--primary-color);
         }
-        .modal-content h3 i {
-            font-size: 2rem;
-            color: var(--accent-color);
-        }
-        .modal-content h4 {
-            color: var(--accent-color);
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .modal-content ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        .modal-content li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
+        .modal-content h3 i { font-size: 2rem; color: var(--accent-color); }
+        .modal-content h4 { color: var(--accent-color); margin-top: 1rem; margin-bottom: 0.5rem; }
+        .modal-content ul { list-style: none; padding: 0; margin-top: 1rem; }
+        .modal-content li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
         .modal-content li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
+            content: "\f00c"; font-family: "Font Awesome 6 Free";
+            font-weight: 900; color: var(--accent-color);
+            position: absolute; left: 0;
         }
 
-        /* Responsive Design */
         @media (max-width: 992px) {
             .nav-links {
-                position: fixed; top: 0; right: 0;
-                transform: translateX(100%);
-                width: 70%; max-width: 300px; height: 100vh;
+                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
                 background-color: var(--background-color); flex-direction: column; justify-content: center;
                 align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
                 transition: transform var(--transition-speed) ease-in-out;
-                z-index: 1002;
+                z-index: 1002; gap: 2.5rem;
+                transform: translateX(100%);
             }
-            .nav-links.nav-active {
-                transform: translateX(0);
-            }
+            .nav-links.nav-active { transform: translateX(0); }
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
             .hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
-            .contact-grid, .industries-content { grid-template-columns: 1fr; }
-            .contact-info { border-left: none; padding-left: 0; margin-top: 2rem; }
+            .industries-content { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .hero-content p { font-size: 1rem; }
             .footer-grid { text-align: center; }
             .social-links { justify-content: center; }
-            .modal-content {
-                flex-direction: column; max-width: 500px;
-                max-height: 90vh; overflow-y: auto;
-            }
-            .modal-info-panel, .modal-form-panel { width: 100%; padding: 2rem; }
-            .form-row { flex-direction: column; gap: 0; }
+            .process-grid { flex-direction: column; align-items: center; gap: 2rem; }
+            .process-grid::before { display: none; }
+            .process-step { max-width: 300px; }
+            .industries-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -518,7 +376,6 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
             </ul>
-             <div class="nav-overlay"></div>
             <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -539,9 +396,9 @@
             </div>
             <div class="hero-content">
                 <h1>Our Expert Accounting Services</h1>
-                <p>Tailored financial solutions that grow with your business.</p>
+                <p>Tailored financial solutions that grow with your business. From day-to-day bookkeeping to strategic growth planning, we provide a full range of services designed to simplify your finances and empower your success.</p>
                 <div class="btn-group">
-                    <a href="services.html" class="btn btn-primary">Our Services</a>
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
                     <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
@@ -552,53 +409,32 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="fade-in">A Complete Suite of Financial Services</h2>
-                    <p class="fade-in">From day-to-day bookkeeping to strategic growth planning, we provide a full range of services designed to simplify your finances and empower your success. We have particular expertise as an ATOL certified accountant for the travel industry.</p>
+                    <p class="fade-in">We have particular expertise as an ATOL certified accountant for the travel industry. Click on any service to learn more.</p>
                 </div>
                 <div class="services-grid">
-                    <!-- Self-Assessment Tax Returns -->
-                    <div class="service-box fade-in" data-service-id="self-assessment">
+                    <div class="service-box fade-in" data-service-id="self-assessment" role="button" tabindex="0">
                         <div class="icon-wrapper"><i class="fas fa-user-check" aria-hidden="true"></i></div>
                         <h3>Self-Assessment Tax Returns</h3>
                     </div>
-                    <!-- Company Accounts & Tax Return -->
-                    <div class="service-box fade-in" data-service-id="company-accounts">
+                    <div class="service-box fade-in" data-service-id="company-accounts" role="button" tabindex="0">
                         <div class="icon-wrapper"><i class="fas fa-building-flag" aria-hidden="true"></i></div>
                         <h3>Company Accounts & Tax Return</h3>
                     </div>
-                    <!-- Bookkeeping & VAT -->
-                    <div class="service-box fade-in" data-service-id="bookkeeping-vat">
+                    <div class="service-box fade-in" data-service-id="bookkeeping-vat" role="button" tabindex="0">
                         <div class="icon-wrapper"><i class="fas fa-book-open" aria-hidden="true"></i></div>
                         <h3>Bookkeeping & VAT</h3>
                     </div>
-                    <!-- Growth Advisory -->
-                    <div class="service-box fade-in" data-service-id="growth-advisory">
+                    <div class="service-box fade-in" data-service-id="growth-advisory" role="button" tabindex="0">
                         <div class="icon-wrapper"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
                         <h3>Growth Advisory</h3>
                     </div>
-                    <!-- Payroll Services -->
-                    <div class="service-box fade-in" data-service-id="payroll">
+                    <div class="service-box fade-in" data-service-id="payroll" role="button" tabindex="0">
                         <div class="icon-wrapper"><i class="fas fa-users-cog" aria-hidden="true"></i></div>
                         <h3>Payroll Services</h3>
                     </div>
-                    <!-- Company Formation -->
-                    <div class="service-box fade-in" data-service-id="company-formation">
+                    <div class="service-box fade-in" data-service-id="company-formation" role="button" tabindex="0">
                         <div class="icon-wrapper"><i class="fas fa-building" aria-hidden="true"></i></div>
                         <h3>Company Formation</h3>
-                    </div>
-                    <!-- ATOL Certified Accountant -->
-                    <div class="service-box fade-in" data-service-id="atol">
-                        <div class="icon-wrapper"><i class="fas fa-plane-departure" aria-hidden="true"></i></div>
-                        <h3>ATOL Certified Accountant</h3>
-                    </div>
-                    <!-- Tax Planning -->
-                    <div class="service-box fade-in" data-service-id="tax-planning">
-                        <div class="icon-wrapper"><i class="fas fa-coins" aria-hidden="true"></i></div>
-                        <h3>Tax Planning</h3>
-                    </div>
-                    <!-- Mortgage & Property Finance -->
-                    <div class="service-box fade-in" data-service-id="mortgage-finance">
-                        <div class="icon-wrapper"><i class="fas fa-house-chimney-medical" aria-hidden="true"></i></div>
-                        <h3>Mortgage & Property Finance</h3>
                     </div>
                 </div>
             </div>
@@ -609,44 +445,42 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="fade-in">Our Simple 4-Step Process</h2>
-                    <p class="fade-in">Getting started with us is straightforward and hassle-free. Here’s what you can expect.</p>
+                    <p class="fade-in">Getting started with us is straightforward and hassle-free.</p>
                 </div>
                 <div class="process-grid">
                     <div class="process-step fade-in">
                         <div class="process-number">1</div>
                         <h4>Discovery Call</h4>
-                        <p>We start with a free, no-obligation chat to understand your business, challenges, and goals.</p>
+                        <p>A free, no-obligation chat to understand your business and goals.</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-number">2</div>
                         <h4>Tailored Proposal</h4>
-                        <p>You'll receive a clear, fixed-fee proposal outlining the exact services that fit your needs.</p>
+                        <p>You'll receive a clear, fixed-fee proposal outlining the exact services you need.</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-number">3</div>
                         <h4>Seamless Onboarding</h4>
-                        <p>We handle everything, including contacting your previous accountant, to ensure a smooth transition.</p>
+                        <p>We handle everything, including contacting your previous accountant.</p>
                     </div>
                     <div class="process-step fade-in">
                         <div class="process-number">4</div>
                         <h4>Ongoing Support</h4>
-                        <p>You'll have our full support, proactive advice, and regular check-ins to keep you on track.</p>
+                        <p>You'll have our full support and proactive advice to keep you on track.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Industries Section - New Design -->
+        <!-- Industries Section -->
         <section id="industries">
             <div class="container">
                 <div class="section-header">
                     <h2 class="fade-in">Specialist Sector Expertise</h2>
-                    <p class="fade-in">Our in-depth knowledge of key industries allows us to provide targeted, commercially-astute advice that goes beyond standard accounting.</p>
                 </div>
                 <div class="industries-content fade-in">
                     <div class="industries-text">
-                        <p>We work with a wide variety of clients, from startups and sole traders to established SMEs. Our proactive approach means we don't just crunch the numbers; we help you navigate industry-specific challenges and opportunities. From the complexities of the Construction Industry Scheme (CIS) to the unique accounting needs of the healthcare sector, we are your trusted local experts in and around Slough.</p>
-                        <p>Our commitment to staying up-to-date with industry-specific regulations ensures that your business is always compliant and financially optimized.</p>
+                        <p>Our in-depth knowledge of key industries allows us to provide targeted, commercially-astute advice. From the complexities of the Construction Industry Scheme (CIS) to the unique accounting needs of the healthcare sector, we are your trusted local experts.</p>
                     </div>
                     <ul class="industries-list">
                         <li><i class="fas fa-hard-hat" aria-hidden="true"></i>Construction & Trade</li>
@@ -655,39 +489,8 @@
                         <li><i class="fas fa-hospital" aria-hidden="true"></i>Healthcare & Care Homes</li>
                         <li><i class="fas fa-home" aria-hidden="true"></i>Landlords</li>
                         <li><i class="fas fa-plane-departure" aria-hidden="true"></i>Travel & Tourism</li>
-                        <li><i class="fas fa-utensils" aria-hidden="true"></i>Hospitality</li>
-                        <li><i class="fas fa-truck-fast" aria-hidden="true"></i>Logistics & Transport</li>
                     </ul>
                 </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                 <div class="section-header">
-                    <h2 class="fade-in">Ready to Simplify Your Finances?</h2>
-                    <p class="fade-in">Contact us today for a free, no-obligation consultation.</p>
-                </div>
-                <div class="contact-grid fade-in">
-                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form" novalidate>
-                        <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
-                        <div class="form-row">
-                            <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required></div>
-                            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
-                        </div>
-                        <div class="form-group"><label for="message">Message *</label><textarea id="message" name="message" rows="5" required placeholder="Tell us about your business..."></textarea></div>
-                        <button type="submit" class="btn btn-primary">Send Secure Message</button>
-                        <p class="form-status" role="status"></p>
-                    </form>
-                    <div class="contact-info">
-                        <h3>Contact Details</h3>
-                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
-                    </div>
-                </div>
-                <iframe id="map-embed" class="fade-in" title="Wisetax Accountants Location" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c6838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
@@ -697,12 +500,13 @@
             <div class="footer-grid">
                 <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
                 <div><h4>Quick Links</h4><ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul></div>
                 <div><h4>Contact Us</h4>
-                    <p>1st floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
+                    <p>1st Floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
                     <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
                     <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
                 </div>
@@ -722,16 +526,17 @@
             <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
             <h3 id="modal-service-title"></h3>
             <p id="modal-service-desc"></p>
+            <h4>What's included?</h4>
             <ul id="modal-service-list"></ul>
             <h4 id="modal-service-price"></h4>
-            <p class="modal-disclaimer">Please note that all prices are a starting point and may vary depending on the complexity and scope of the work required. For an accurate quote, please contact us for a free, no-obligation consultation.</p>
+            <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem; text-align:center;">Get a Quote</a>
         </div>
     </div>
     
     <!-- Consultation Modal -->
     <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title" hidden>
         <div class="modal-content">
-            <div class="modal-info-panel">
+             <div class="modal-info-panel">
                 <h3>Start the Conversation</h3>
                 <p>A free, no-obligation chat to see how we can help you achieve financial clarity.</p>
             </div>
@@ -748,12 +553,11 @@
             </div>
         </div>
     </div>
-
+    
     <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
 
     <script>
-        // Main App Initializer
         class WisetaxApp {
             constructor() {
                 this.initComponents();
@@ -765,10 +569,9 @@
                 this.themeToggle = new ThemeToggle();
                 this.backToTop = new BackToTop();
                 this.scrollAnimations = new ScrollAnimations();
-                this.faqAccordion = new FAQAccordion();
-                this.modalSystem = new ModalSystem();
+                this.serviceModals = new ServiceModals(this);
+                this.modalSystem = new ModalSystem(); 
                 this.formHandler = new FormHandler();
-                this.serviceModals = new ServiceModals();
             }
 
             initEventListeners() {
@@ -786,86 +589,35 @@
             }
         }
         
-        // --- COMPONENT CLASSES ---
-
         class ServiceModals {
-            constructor() {
+            constructor(app) {
+                this.app = app;
                 this.serviceBoxes = document.querySelectorAll('.service-box');
                 this.modal = document.getElementById('service-modal');
+                if (!this.modal || this.serviceBoxes.length === 0) return;
+
                 this.modalTitle = this.modal.querySelector('#modal-service-title');
                 this.modalDesc = this.modal.querySelector('#modal-service-desc');
                 this.modalList = this.modal.querySelector('#modal-service-list');
                 this.modalPrice = this.modal.querySelector('#modal-service-price');
 
                 this.serviceData = {
-                    'self-assessment': {
-                        icon: 'fa-user-check',
-                        title: 'Self-Assessment Tax Returns',
-                        desc: 'We make tax returns simple for individuals, sole traders, and company directors.',
-                        list: ['Calculation of your tax liability.', 'Identifying all allowable expenses.', 'Online filing directly with HMRC.', 'Advice on tax payments and deadlines.'],
-                        price: 'from £150 +VAT'
-                    },
-                    'company-accounts': {
-                        icon: 'fa-building-flag',
-                        title: 'Company Accounts & Tax Return',
-                        desc: 'From sole traders to limited companies, we ensure your accounts are professionally prepared and submitted on time.',
-                        list: ['Preparation of Statutory Accounts.', 'Corporation Tax Return (CT600) submission.', 'Filing with Companies House and HMRC.', 'Proactive tax advice to minimize liabilities.'],
-                        price: 'from £600 +VAT'
-                    },
-                    'bookkeeping-vat': {
-                        icon: 'fa-book-open',
-                        title: 'Bookkeeping & VAT',
-                        desc: 'Our bookkeeping services provide real-time financial insights so you can make informed decisions and stay on top of your finances.',
-                        list: ['Monthly & Quarterly Bookkeeping.', 'Bank & Credit Card Reconciliation.', 'Digital Receipt Management.', 'Xero/QuickBooks Subscription.', 'VAT Return Submission (MTD).', 'Financial Statement Preparation.'],
-                        price: 'from £100 +VAT per month'
-                    },
-                    'growth-advisory': {
-                        icon: 'fa-chart-line',
-                        title: 'Growth Advisory',
-                        desc: 'We go beyond traditional accounting to become a strategic partner in your business\'s growth, helping you plan for the future and achieve your long-term goals.',
-                        list: ['Cash Flow Forecasting.', 'Management Accounts.', 'Business Planning & Strategy.', 'KPI & Performance Dashboards.', 'Business Valuations.', 'Financial & Budget Analysis.'],
-                        price: 'from £500 +VAT'
-                    },
-                    'payroll': {
-                        icon: 'fa-users-cog',
-                        title: 'Payroll Services',
-                        desc: 'Our comprehensive payroll services ensure your employees are paid on time and accurately, while keeping you compliant with the latest regulations.',
-                        list: ['Monthly & Weekly Payroll Processing.', 'PAYE & National Insurance Submissions.', 'Pension Scheme Management.', 'P45s, P60s & Employee Payslips.', 'Statutory Sick & Maternity Pay.', 'Year-end Payroll Reports.'],
-                        price: 'from £50 +VAT per month'
-                    },
-                    'company-formation': {
-                        icon: 'fa-building',
-                        title: 'Company Formation',
-                        desc: 'Starting a new business is an exciting journey. We provide a seamless company formation service, guiding you through the process and setting you up for success.',
-                        list: ['Limited Company Formation.', 'Liaison with Companies House.', 'Statutory Book Maintenance.', 'VAT application.', 'PAYE application.', 'Post-incorporation Support.'],
-                        price: 'from £60'
-                    },
-                    'atol': {
-                        icon: 'fa-plane-departure',
-                        title: 'ATOL Certified Accountant',
-                        desc: 'As an ATOL certified accountant, we have specialist expertise in the travel industry, ensuring your business is fully compliant with all Civil Aviation Authority (CAA) regulations.',
-                        list: ['ATOL Compliance & Reporting.', 'Trust Account Management.', 'Submission of Annual Accountant\'s Report.', 'Preparation of Financial Statements for ATOL renewal.', 'Specialist tax advice for travel businesses.'],
-                        price: 'from £250 +VAT'
-                    },
-                    'tax-planning': {
-                        icon: 'fa-coins',
-                        title: 'Tax Planning',
-                        desc: 'Proactive tax planning is essential for minimizing your liabilities and maximizing your wealth. We provide strategic advice for both individuals and businesses.',
-                        list: ['Personal Tax Planning.', 'Business Tax Efficiency.', 'Inheritance Tax Advice.', 'Capital Gains Tax Mitigation.', 'Maximising Tax Reliefs & Allowances.'],
-                        price: 'Contact for quote'
-                    },
-                    'mortgage-finance': {
-                        icon: 'fa-house-chimney-medical',
-                        title: 'Mortgage & Property Finance',
-                        desc: 'We provide specialist accounting and financial services for landlords and property investors, from portfolio management to navigating complex mortgage finance.',
-                        list: ['Mortgage & Remortgage Support.', 'Property Investment Tax Advice.', 'Buy-to-Let Accounting.', 'Rental Income & Expense Management.', 'Capital Gains Tax on Property.', 'Portfolio Management & Planning.'],
-                        price: 'Contact for quote'
-                    }
+                    'self-assessment': { icon: 'fa-user-check', title: 'Self-Assessment Tax Returns', desc: 'We make tax returns simple for individuals, sole traders, and company directors.', list: ['Calculation of your tax liability', 'Identifying all allowable expenses', 'Online filing directly with HMRC', 'Advice on tax payments and deadlines'], price: 'from £150 +VAT' },
+                    'company-accounts': { icon: 'fa-building-flag', title: 'Company Accounts & Tax Return', desc: 'We ensure your accounts are professionally prepared and submitted on time.', list: ['Preparation of Statutory Accounts', 'Corporation Tax Return (CT600) submission', 'Filing with Companies House and HMRC', 'Proactive tax advice to minimize liabilities'], price: 'from £600 +VAT' },
+                    'bookkeeping-vat': { icon: 'fa-book-open', title: 'Bookkeeping & VAT', desc: 'Our services provide real-time financial insights so you can make informed decisions.', list: ['Monthly & Quarterly Bookkeeping', 'Bank & Credit Card Reconciliation', 'VAT Return Submission (MTD)', 'Xero/QuickBooks support'], price: 'from £100 +VAT per month' },
+                    'growth-advisory': { icon: 'fa-chart-line', title: 'Growth Advisory', desc: 'We act as a strategic partner in your business\'s growth, helping you plan for the future.', list: ['Cash Flow Forecasting', 'Management Accounts', 'Business Planning & Strategy', 'KPI & Performance Dashboards'], price: 'Contact for quote' },
+                    'payroll': { icon: 'fa-users-cog', title: 'Payroll Services', desc: 'Ensuring your employees are paid on time, every time, while keeping you compliant.', list: ['Monthly & Weekly Payroll Processing', 'PAYE & NI Submissions', 'Pension Scheme Management', 'P45s, P60s & Employee Payslips'], price: 'from £50 +VAT per month' },
+                    'company-formation': { icon: 'fa-building', title: 'Company Formation', desc: 'We provide a seamless company formation service, setting you up for success from day one.', list: ['Limited Company Formation', 'Liaison with Companies House', 'VAT & PAYE registration advice', 'Post-incorporation Support'], price: 'from £60 +VAT' }
                 };
 
                 this.serviceBoxes.forEach(box => {
-                    box.addEventListener('click', () => {
-                        this.openModal(box.dataset.serviceId);
+                    const handleOpen = () => this.openModal(box.dataset.serviceId);
+                    box.addEventListener('click', handleOpen);
+                    box.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            handleOpen();
+                        }
                     });
                 });
             }
@@ -874,7 +626,7 @@
                 const data = this.serviceData[serviceId];
                 if (!data) return;
 
-                this.modalTitle.innerHTML = `<i class="fas ${data.icon}"></i>${data.title}`;
+                this.modalTitle.innerHTML = `<i class="fas ${data.icon}"></i> ${data.title}`;
                 this.modalDesc.textContent = data.desc;
                 this.modalPrice.textContent = `Price: ${data.price}`;
                 
@@ -885,8 +637,7 @@
                     this.modalList.appendChild(li);
                 });
 
-                document.body.style.overflow = 'hidden';
-                this.modal.classList.add('show');
+                this.app.modalSystem.openModal(this.modal);
             }
         }
 
@@ -894,19 +645,15 @@
             constructor() {
                 this.hamburger = document.querySelector('.hamburger');
                 this.navLinks = document.querySelector('.nav-links');
-                this.overlay = document.querySelector('.nav-overlay');
-                if (!this.hamburger || !this.navLinks || !this.overlay) return;
+                if (!this.hamburger || !this.navLinks) return;
                 
                 this.hamburger.addEventListener('click', this.toggleNav.bind(this));
-                this.overlay.addEventListener('click', this.toggleNav.bind(this));
             }
 
             toggleNav() {
-                this.navLinks.classList.toggle('nav-active');
-                this.overlay.classList.toggle('nav-active');
-                const isActive = this.navLinks.classList.contains('nav-active');
+                const isActive = this.navLinks.classList.toggle('nav-active');
                 this.hamburger.setAttribute('aria-expanded', isActive);
-                document.body.classList.toggle('nav-open', isActive);
+                 document.body.classList.toggle('nav-open', isActive);
             }
         }
 
@@ -968,39 +715,27 @@
             }
         }
 
-        class FAQAccordion {
-            constructor() {
-                this.accordion = document.querySelector('.faq-accordion');
-                if (!this.accordion) return;
-
-                this.accordion.addEventListener('click', e => {
-                    const question = e.target.closest('.faq-question');
-                    if (question) {
-                        const isExpanded = question.getAttribute('aria-expanded') === 'true';
-                        question.setAttribute('aria-expanded', !isExpanded);
-                    }
-                });
-            }
-        }
-
         class ModalSystem {
             constructor() {
                 this.modals = document.querySelectorAll('.modal-overlay');
                 this.openButtons = document.querySelectorAll('#open-modal-btn');
                 this.focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
+                
                 this.init();
             }
 
             init() {
-                this.openButtons.forEach(btn => btn.addEventListener('click', () => this.openModal(document.getElementById('consultation-modal'))));
-
+                this.openButtons.forEach(btn => btn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Stop navigation
+                    this.openModal(document.getElementById('consultation-modal'))
+                }));
+                
                 this.modals.forEach(modal => {
                     modal.addEventListener('click', e => {
                         if (e.target === modal || e.target.closest('.modal-close-btn')) this.closeModal(modal);
                     });
                 });
-
+                
                 document.addEventListener('keydown', e => {
                     if (e.key === 'Escape') {
                         const openModal = document.querySelector('.modal-overlay.show');
@@ -1010,10 +745,10 @@
             }
 
             openModal(modal) {
+                this.previouslyFocusedElement = document.activeElement;
                 modal.removeAttribute('hidden');
                 modal.classList.add('show');
                 document.body.style.overflow = 'hidden';
-
                 this.trapFocus(modal);
             }
 
@@ -1021,43 +756,37 @@
                 modal.classList.remove('show');
                 modal.setAttribute('hidden', true);
                 document.body.style.overflow = '';
-
-                if(this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
+                if (this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
             }
 
             trapFocus(modal) {
-                this.previouslyFocusedElement = document.activeElement;
                 const focusableContent = modal.querySelectorAll(this.focusableElements);
                 const firstFocusable = focusableContent[0];
                 const lastFocusable = focusableContent[focusableContent.length - 1];
-
                 firstFocusable.focus();
 
                 modal.addEventListener('keydown', e => {
                     if (e.key !== 'Tab') return;
-
                     if (e.shiftKey) {
                         if (document.activeElement === firstFocusable) {
-                            lastFocusable.focus();
-                            e.preventDefault();
+                            lastFocusable.focus(); e.preventDefault();
                         }
                     } else {
                         if (document.activeElement === lastFocusable) {
-                            firstFocusable.focus();
-                            e.preventDefault();
+                            firstFocusable.focus(); e.preventDefault();
                         }
                     }
                 });
             }
         }
 
-        class FormHandler {
+         class FormHandler {
             constructor() {
-                document.querySelectorAll('#contact-form, .modal-form').forEach(form => {
+                document.querySelectorAll('.modal-form').forEach(form => {
                     form.addEventListener('submit', this.handleFormSubmit.bind(this));
                 });
             }
-
+            
             async handleFormSubmit(event) {
                 event.preventDefault();
                 const form = event.target;
@@ -1079,9 +808,9 @@
                         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
                         body: json
                     });
-
+                    
                     const result = await response.json();
-
+                    
                     if (response.ok) {
                         statusElement.textContent = result.message || "Success! We'll be in touch soon.";
                         statusElement.style.color = 'green';
@@ -1095,15 +824,15 @@
                 } finally {
                     form.classList.remove('loading');
                     submitButton.disabled = false;
-                    setTimeout(() => { statusElement.textContent = '', statusElement.style.color = ''; }, 5000);
+                    setTimeout(() => { statusElement.textContent = ''; statusElement.style.color = '' }, 5000);
                 }
             }
         }
-
-        // --- INITIALIZE THE APP ---
+        
         document.addEventListener('DOMContentLoaded', () => {
             new WisetaxApp();
         });
     </script>
 </body>
 </html>
+
