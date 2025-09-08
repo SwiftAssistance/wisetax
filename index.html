@@ -116,7 +116,7 @@
         /* Accessibility: Skip Link */
         .skip-link {
             position: absolute;
-            top: -100%; /* Changed from -40px */
+            top: -100%;
             left: 0;
             background: var(--accent-color);
             color: white;
@@ -163,7 +163,7 @@
         }
         .hero-video-wrapper {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-            background-color: var(--primary-color); /* Fallback color */
+            background-color: var(--primary-color);
         }
         #hero-video {
             width: 100%; height: 100%; object-fit: cover;
@@ -190,8 +190,6 @@
         /* =================================================================
         DEFERRABLE CSS
         - Styles for components below the fold.
-        - In a real-world scenario, this would be moved to a separate stylesheet 
-          and loaded asynchronously for optimal performance.
         ================================================================== */
         
         /* General Components */
@@ -465,7 +463,7 @@
       "email": "info@wisetax.org.uk",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "1st floor, 7 Mackenzie Street",
+        "streetAddress": "1st Floor, 7 Mackenzie Street",
         "addressLocality": "Slough",
         "postalCode": "SL1 1XQ",
         "addressCountry": "UK"
@@ -485,7 +483,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
             </ul>
@@ -711,7 +709,7 @@
                         <h3>Contact Details</h3>
                         <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
                         <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st Floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
                     </div>
                 </div>
                 <iframe id="map-embed" class="fade-in" title="Wisetax Accountants Location" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -726,11 +724,11 @@
                 <div><h4>Quick Links</h4><ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul></div>
                 <div><h4>Contact Us</h4>
-                    <p>1st floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
+                    <p>1st Floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
                     <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
                     <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
                 </div>
@@ -822,6 +820,7 @@
             toggleNav() {
                 const isActive = this.navLinks.classList.toggle('nav-active');
                 this.hamburger.setAttribute('aria-expanded', isActive);
+                 document.body.classList.toggle('nav-open', isActive);
             }
         }
 
