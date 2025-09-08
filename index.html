@@ -168,13 +168,17 @@
         #hero-video {
             width: 100%; height: 100%; object-fit: cover;
         }
-        #hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.7)); z-index: -1;
-        }
         .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
-        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero-content h1 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+        }
         .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         
         /* Animation */
@@ -426,9 +430,10 @@
                 position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
                 background-color: var(--background-color); flex-direction: column; justify-content: center;
                 align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: right var(--transition-speed) ease-in-out; /* Changed from transform to right */
+                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
+                transform: translateX(100%);
             }
-            .nav-links.nav-active { right: 0; } /* Changed to move the nav-links into view */
+            .nav-links.nav-active { transform: translateX(0); }
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
@@ -460,35 +465,35 @@
       "email": "info@wisetax.org.uk",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "1st Floor, 7 Mackenzie Street",
+        "streetAddress": "1st floor, 7 Mackenzie Street",
         "addressLocality": "Slough",
         "postalCode": "SL1 1XQ",
         "addressCountry": "UK"
       },
       "url": "https://www.wisetax.co.uk",
       "logo": "https://placehold.co/200x60/001f3f/ffffff?text=Wisetax",
-      "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c6838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk",
+      "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk",
       "openingHours": "Mo-Fr 09:00-17:00"
     }
     </script>
 </head>
 <body>
-
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="main-header">
         <nav class="navbar container">
             <a href="index.html" class="logo">Wisetax Accountants</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
             </ul>
-            <div class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false">
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -573,7 +578,7 @@
                         <h3>Bookkeeping & VAT</h3>
                         <p class="price">From &pound;120 /month</p>
                         <ul>
-                            <li>IRIS Kashflow Subscription</li>
+                            <li>Xero/QuickBooks Subscription</li>
                             <li>Monthly Bookkeeping</li>
                             <li>VAT Return Submission (MTD)</li>
                             <li>Receipt Management App</li>
@@ -669,7 +674,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
-                            <span>What accounting software diversidade you use?</span>
+                            <span>What accounting software do you use?</span>
                             <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
                         </button>
                         <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>We are certified experts in major cloud accounting platforms like Xero, QuickBooks, and FreeAgent. We can work with your existing software or help you migrate to the best solution for your business.</p></div></div>
@@ -709,7 +714,7 @@
                         <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
                     </div>
                 </div>
-                <iframe id="map-embed" class="fade-in" title="Wisetax Accountants Location" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c6838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe id="map-embed" class="fade-in" title="Wisetax Accountants Location" width="600" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.926284692121!2d-0.5940!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766f81e87d1f5b%3A0x673c838a339798c!2s7%20Mackenzie%20St%2C%20Slough%20SL1%201XQ!5e0!3m2!1sen!2suk!4v1672531200000!5m2!1sen!2suk" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
@@ -719,10 +724,9 @@
             <div class="footer-grid">
                 <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
                 <div><h4>Quick Links</h4><ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul></div>
                 <div><h4>Contact Us</h4>
@@ -837,7 +841,7 @@
             }
 
             toggleTheme() {
-                const currentTheme = document.documentElement.getAsyncIteratorribute('data-theme');
+                const currentTheme = document.documentElement.getAttribute('data-theme');
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
                 this.setTheme(newTheme);
             }
@@ -931,6 +935,7 @@
 
                 this.isTransitioning = false;
                 this.transitionDuration = 400; // ms, should match CSS if any
+                
                 this.init();
             }
 
@@ -1170,3 +1175,4 @@
     </script>
 </body>
 </html>
+
