@@ -43,30 +43,21 @@
     <style>
         /* =================================================================
         CRITICAL CSS (INLINE FOR PERFORMANCE)
-        - Base styles, variables, header, and hero section
-        - These styles are essential for rendering the above-the-fold content without delay.
         ================================================================== */
         :root {
-            /* Color Palette */
-            --primary-color: #001F3F; /* Deep Navy Blue */
-            --accent-color: #3B82F6; /* Light Blue */
-            --background-color: #FFFFFF; /* Crisp White */
-            --surface-color: #F5F5F5; /* Subtle Gray */
+            --primary-color: #001F3F;
+            --accent-color: #3B82F6;
+            --background-color: #FFFFFF;
+            --surface-color: #F5F5F5;
             --text-color: #333333;
             --text-muted-color: #6c757d;
-            
-            /* Typography */
             --heading-font: 'Montserrat', sans-serif;
             --body-font: 'Open Sans', sans-serif;
-
-            /* Fluid Sizing (Modern CSS) */
-            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem); /* 16px -> 18px */
-            --font-size-h1: clamp(2rem, 1.5rem + 2.5vw, 3.5rem); /* 32px -> 56px */
-            --font-size-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem); /* 28px -> 44px */
-            --space-section: clamp(4rem, 2rem + 10vw, 8rem); /* 64px -> 128px */
-            --space-content: clamp(1.5rem, 1rem + 2.5vw, 3rem); /* 24px -> 48px */
-
-            /* Other Variables */
+            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --font-size-h1: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+            --font-size-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
+            --space-section: clamp(4rem, 2rem + 10vw, 8rem);
+            --space-content: clamp(1.5rem, 1rem + 2.5vw, 3rem);
             --transition-speed: 0.3s;
             --border-radius: 10px;
         }
@@ -82,7 +73,6 @@
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Respect user motion preferences */
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after {
@@ -113,24 +103,16 @@
         p { margin-bottom: 1rem; max-width: 75ch; }
         section { padding: var(--space-section) 0; }
         
-        /* Accessibility: Skip Link */
         .skip-link {
             position: absolute;
-            top: -100%;
-            left: 0;
-            background: var(--accent-color);
-            color: white;
-            padding: 8px 16px;
-            z-index: 9999;
-            transition: top 0.3s ease-in-out;
-            text-decoration: none;
+            top: -100%; left: 0;
+            background: var(--accent-color); color: white;
+            padding: 8px 16px; z-index: 9999;
+            transition: top 0.3s ease-in-out; text-decoration: none;
             border-bottom-right-radius: 8px;
         }
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link:focus { top: 0; }
         
-        /* Header */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
             background-color: rgba(255, 255, 255, 0.8);
@@ -139,9 +121,7 @@
             transition: background-color var(--transition-speed), transform 0.3s ease-out;
             transform: translateY(0);
         }
-        .main-header.hidden {
-            transform: translateY(-100%);
-        }
+        .main-header.hidden { transform: translateY(-100%); }
         [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
@@ -156,7 +136,6 @@
         }
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
         
-        /* Hero Section */
         #hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
@@ -181,7 +160,6 @@
         }
         .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         
-        /* Animation */
         @keyframes fade-in-up {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -189,10 +167,8 @@
 
         /* =================================================================
         DEFERRABLE CSS
-        - Styles for components below the fold.
         ================================================================== */
         
-        /* General Components */
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
         .btn {
             display: inline-block; padding: 12px 28px; border-radius: 50px;
@@ -207,7 +183,6 @@
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         
-        /* Mobile Navigation */
         .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
         .hamburger .bar {
             display: block; width: 25px; height: 3px; margin: 5px auto;
@@ -215,8 +190,8 @@
             border-radius: 3px;
         }
         [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
+        body.nav-open { overflow: hidden; }
 
-        /* About Section */
         #about-preview { background-color: var(--background-color); }
         .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-content); align-items: center; }
         .stats-grid {
@@ -230,7 +205,6 @@
         .team-member { display: flex; align-items: center; gap: 1rem; margin: 1.5rem 0; }
         .team-member img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 
-        /* Services Section */
         #services-preview { background-color: var(--surface-color); }
         .services-grid { 
             display: grid; 
@@ -252,7 +226,6 @@
         .service-card ul li::before { content: '✓'; color: var(--accent-color); font-weight: bold; margin-right: 10px; }
         .service-card .btn-primary { margin-top: auto; text-align: center; }
 
-        /* Industries Section */
         .industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .industry-card {
             background-color: var(--surface-color); padding: 2rem; border-radius: var(--border-radius);
@@ -260,7 +233,6 @@
         }
         .industry-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
         
-        /* Testimonials Section (Modern Slider) */
         #testimonials { background-color: var(--surface-color); }
         .testimonial-slider-wrapper { position: relative; max-width: 800px; margin: auto; overflow: hidden; }
         .testimonial-slider {
@@ -295,7 +267,6 @@
         }
         .slider-dots button.active { background-color: var(--accent-color); }
 
-        /* FAQ Section */
         #faq { background-color: var(--background-color); }
         .faq-accordion { max-width: 800px; margin: 0 auto; }
         .faq-item {
@@ -320,7 +291,6 @@
         .faq-answer > div { overflow: hidden; }
         .faq-answer p { padding: 0 1.5rem 1.5rem; margin: 0; }
 
-        /* Contact Section */
         #contact { background-color: var(--surface-color); }
         .contact-grid {
             display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;
@@ -344,7 +314,6 @@
         [data-theme="light"] #map-embed { filter: grayscale(1); }
         [data-theme="dark"] #map-embed { filter: invert(1) grayscale(1); }
 
-        /* Form States */
         .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
         form.loading .btn {
             cursor: wait;
@@ -367,7 +336,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Footer */
         .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
         [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
         .footer-grid {
@@ -385,7 +353,6 @@
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         .footer-bottom a { color: #fff; }
 
-        /* Utility Buttons */
         .back-to-top, .theme-toggle {
             position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
             background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
@@ -397,7 +364,6 @@
         .back-to-top.show { opacity: 1; visibility: visible; }
         .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
 
-        /* Modal System */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
             z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
@@ -422,7 +388,6 @@
             font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
         }
 
-        /* Responsive Design */
         @media (max-width: 992px) {
             .nav-links {
                 position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
