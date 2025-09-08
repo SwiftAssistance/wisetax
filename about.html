@@ -33,7 +33,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="wisetax-logo.jpg">
+    <link rel="icon" type="image/jpeg" href="wisetax-logo.jpg">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
@@ -44,26 +44,19 @@
         CRITICAL CSS (INLINE FOR PERFORMANCE)
         ================================================================== */
         :root {
-            /* Color Palette */
-            --primary-color: #001F3F; /* Deep Navy Blue */
-            --accent-color: #3B82F6; /* Light Blue */
-            --background-color: #FFFFFF; /* Crisp White */
-            --surface-color: #F5F5F5; /* Subtle Gray */
+            --primary-color: #001F3F;
+            --accent-color: #3B82F6;
+            --background-color: #FFFFFF;
+            --surface-color: #F5F5F5;
             --text-color: #333333;
             --text-muted-color: #6c757d;
-
-            /* Typography */
             --heading-font: 'Montserrat', sans-serif;
             --body-font: 'Open Sans', sans-serif;
-
-            /* Fluid Sizing (Modern CSS) */
             --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
             --font-size-h1: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
             --font-size-h2: clamp(1.75rem, 1.4rem + 1.75vw, 2.75rem);
             --space-section: clamp(4rem, 2rem + 10vw, 8rem);
             --space-content: clamp(1.5rem, 1rem + 2.5vw, 3rem);
-
-            /* Other Variables */
             --transition-speed: 0.3s;
             --border-radius: 10px;
         }
@@ -109,7 +102,6 @@
         p { margin-bottom: 1rem; max-width: 75ch; }
         section { padding: var(--space-section) 0; }
 
-        /* Accessibility: Skip Link */
         .skip-link {
             position: absolute;
             top: -100%;
@@ -126,7 +118,6 @@
             top: 0;
         }
 
-        /* Header */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
             background-color: rgba(255, 255, 255, 0.8);
@@ -152,28 +143,36 @@
         }
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-        /* Hero Section (Reused from index.txt & services.txt) */
         #hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
         }
         .hero-video-wrapper {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-            background-color: var(--primary-color); /* Fallback color */
+            background-color: var(--primary-color);
         }
         #hero-video {
             width: 100%; height: 100%; object-fit: cover;
         }
-        #hero::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.7)); z-index: -1;
+        .hero-content { 
+            max-width: 800px;
+            animation: fade-in-up 1s ease-out forwards;
+            z-index: 1;
         }
-        .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
-        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero-content h1 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+        }
         .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-
-        /* Animation */
+        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
+        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
+        
         @keyframes fade-in-up {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -183,7 +182,6 @@
         DEFERRABLE CSS
         ================================================================== */
 
-        /* General Components */
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
         .btn {
             display: inline-block; padding: 12px 28px; border-radius: 50px;
@@ -192,13 +190,10 @@
         }
         .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
         .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
-        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
-        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
 
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-        /* Mobile Navigation */
+        
         .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
         .hamburger .bar {
             display: block; width: 25px; height: 3px; margin: 5px auto;
@@ -206,8 +201,7 @@
             border-radius: 3px;
         }
         [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
-
-        /* About Page Sections */
+        
         .commitment-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -276,7 +270,6 @@
         #cta-section p { margin: 1.5rem 0; font-size: 1.1rem; }
         #cta-section .btn { font-size: 1.1rem; padding: 15px 30px; }
 
-        /* Footer */
         .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
         [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
         .footer-grid {
@@ -294,7 +287,6 @@
         .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
         .footer-bottom a { color: #fff; }
 
-        /* Utility Buttons */
         .back-to-top, .theme-toggle {
             position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
             background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
@@ -306,7 +298,6 @@
         .back-to-top.show { opacity: 1; visibility: visible; }
         .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
 
-        /* Modal System */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
             z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
@@ -331,7 +322,6 @@
             font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
         }
 
-        /* Form States */
         .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
         form.loading .btn {
             cursor: wait;
@@ -354,7 +344,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Responsive Design */
         @media (max-width: 992px) {
             .nav-links {
                 position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
@@ -388,18 +377,18 @@
     <header class="main-header">
         <nav class="navbar container">
             <a href="index.html" class="logo">Wisetax Accountants</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html" class="active">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
             </ul>
-            <div class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false">
+            <button class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </nav>
     </header>
 
@@ -418,12 +407,12 @@
                 <p>Your dedicated partners in financial clarity, proudly serving the Slough business community since 2008.</p>
                 <div class="btn-group">
                     <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-                    <button id="open-modal-btn-hero" class="btn btn-secondary">Book a Consultation</button>
+                    <a href="contact.html" class="btn btn-secondary">Book a Consultation</a>
                 </div>
             </div>
         </section>
 
-        <!-- Our Commitment Section (from about.txt) -->
+        <!-- Our Commitment Section -->
         <section id="story">
             <div class="container">
                 <div class="section-header">
@@ -450,7 +439,7 @@
             </div>
         </section>
 
-        <!-- Core Values Section (from about.txt) -->
+        <!-- Core Values Section -->
         <section id="values">
             <div class="container">
                 <div class="section-header">
@@ -477,7 +466,7 @@
             </div>
         </section>
 
-        <!-- Meet The Founder Section (from about.txt) -->
+        <!-- Meet The Founder Section -->
         <section id="team">
             <div class="container">
                 <div class="section-header">
@@ -486,7 +475,7 @@
                 </div>
                 <div class="team-member fade-in">
                     <div class="team-photo">
-                        <img src="sami.png" alt="Headshot of Ahmed Sami Abbasi, Founder of Wisetax Accountants">
+                        <img src="https://placehold.co/300x300/001f3f/ffffff.webp?text=AS" alt="Headshot of Ahmed Sami Abbasi, Founder of Wisetax Accountants" width="300" height="300" loading="lazy" decoding="async">
                     </div>
                     <div class="team-bio">
                         <h3>Ahmed Sami Abbasi, ACCA, IFA</h3>
@@ -497,7 +486,7 @@
             </div>
         </section>
 
-        <!-- CTA Section (from about.txt) -->
+        <!-- CTA Section -->
         <section id="cta-section">
             <div class="container fade-in">
                 <h2>Ready to Partner With Us?</h2>
@@ -512,12 +501,13 @@
             <div class="footer-grid">
                 <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
                 <div><h4>Quick Links</h4><ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul></div>
                 <div><h4>Contact Us</h4>
-                    <p>1st floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
+                    <p>1st Floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
                     <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
                     <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
                 </div>
@@ -531,7 +521,7 @@
         </div>
     </footer>
 
-    <!-- Consultation Modal (Reused from index.txt & services.txt) -->
+    <!-- Consultation Modal -->
     <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title" hidden>
         <div class="modal-content">
             <div class="modal-info-panel">
@@ -556,7 +546,6 @@
     <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
 
     <script>
-        // Main App Initializer
         class WisetaxApp {
             constructor() {
                 this.initComponents();
@@ -587,8 +576,6 @@
             }
         }
 
-        // --- COMPONENT CLASSES (Reused from index.txt & services.txt) ---
-
         class MobileNav {
             constructor() {
                 this.hamburger = document.querySelector('.hamburger');
@@ -601,6 +588,7 @@
             toggleNav() {
                 const isActive = this.navLinks.classList.toggle('nav-active');
                 this.hamburger.setAttribute('aria-expanded', isActive);
+                 document.body.classList.toggle('nav-open', isActive);
             }
         }
 
@@ -665,7 +653,7 @@
         class ModalSystem {
             constructor() {
                 this.modals = document.querySelectorAll('.modal-overlay');
-                this.openButtons = document.querySelectorAll('#open-modal-btn, #open-modal-btn-hero, #open-modal-btn-cta');
+                this.openButtons = document.querySelectorAll('#open-modal-btn, #open-modal-btn-cta');
                 this.focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
                 this.init();
@@ -689,6 +677,7 @@
             }
 
             openModal(modal) {
+                this.previouslyFocusedElement = document.activeElement;
                 modal.removeAttribute('hidden');
                 modal.classList.add('show');
                 document.body.style.overflow = 'hidden';
@@ -705,7 +694,6 @@
             }
 
             trapFocus(modal) {
-                this.previouslyFocusedElement = document.activeElement;
                 const focusableContent = modal.querySelectorAll(this.focusableElements);
                 const firstFocusable = focusableContent[0];
                 const lastFocusable = focusableContent[focusableContent.length - 1];
