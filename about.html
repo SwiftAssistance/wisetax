@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en-GB" data-theme="light">
 <head>
     <!-- =================================================================
     METADATA & PERFORMANCE HINTS
     ================================================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Wisetax Accountants</title>
-    <meta name="description" content="Learn about Wisetax Accountants, our mission, values, and the dedicated team serving businesses in Slough since 2008.">
-    <meta name="keywords" content="about wisetax, accountants in slough, slough accountants, our mission, financial experts slough">
+    <title>About Us | Wisetax Accountants in Slough</title>
+    <meta name="description" content="Learn about Wisetax Accountants, our mission, values, and the dedicated team serving businesses in Slough since 2015.">
+    <meta name="keywords" content="about wisetax, accountants in slough, slough accountants, our mission, financial experts slough, ahmed sami abbasi">
     <meta name="author" content="Wisetax Accountants">
+    <link rel="canonical" href="https://www.wisetax.co.uk/about.html">
 
     <!-- PWA & Theme Color -->
     <meta name="theme-color" content="#001F3F">
@@ -24,21 +25,24 @@
     <!-- Preload critical assets -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    
     <!-- Social Media Meta Tags -->
     <meta property="og:title" content="About Us | Wisetax Accountants">
     <meta property="og:description" content="Discover the story and values behind Slough's trusted accounting professionals.">
     <meta property="og:image" content="https://placehold.co/1200x630/001f3f/ffffff?text=About+Wisetax">
     <meta property="og:url" content="https://www.wisetax.co.uk/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="wisetax-logo.jpg">
+    <link rel="apple-touch-icon" href="wisetax-logo.jpg">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    
     <style>
         /* =================================================================
         CRITICAL CSS (INLINE FOR PERFORMANCE)
@@ -61,17 +65,8 @@
             --border-radius: 10px;
         }
 
-        [data-theme="dark"] {
-            --primary-color: #FFFFFF;
-            --accent-color: #3B82F6;
-            --background-color: #121212;
-            --surface-color: #1E1E1E;
-            --text-color: #E0E0E0;
-            --text-muted-color: #A9A9A9;
-        }
-
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+        
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after {
@@ -89,47 +84,36 @@
             color: var(--text-color);
             line-height: 1.7;
             font-size: var(--font-size-base);
-            transition: background-color var(--transition-speed), color var(--transition-speed);
             overflow-x: hidden;
         }
-
+        main { transition: opacity 0.3s ease-in-out; }
+        body.is-navigating main { opacity: 0; }
+        
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
         h1, h2, h3, h4 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 1rem; line-height: 1.2; }
-        h1 { font-size: var(--font-size-h1); }
-        h2 { font-size: var(--font-size-h2); }
+        h1 { font-size: var(--font-size-h1); } 
+        h2 { font-size: var(--font-size-h2); } 
         h3 { font-size: 1.5rem; }
         h4 { font-size: 1.2rem; }
         p { margin-bottom: 1rem; max-width: 75ch; }
         section { padding: var(--space-section) 0; }
-
+        
         .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 0;
-            background: var(--accent-color);
-            color: white;
-            padding: 8px 16px;
-            z-index: 9999;
-            transition: top 0.3s ease-in-out;
-            text-decoration: none;
+            position: absolute; top: -100%; left: 0;
+            background: var(--accent-color); color: white;
+            padding: 8px 16px; z-index: 9999;
+            transition: top 0.3s ease-in-out; text-decoration: none;
             border-bottom-right-radius: 8px;
         }
-        .skip-link:focus {
-            top: 0;
-        }
-
+        .skip-link:focus { top: 0; }
+        
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color var(--transition-speed), transform 0.3s ease-out;
-            transform: translateY(0);
+            transition: background-color var(--transition-speed);
         }
-        .main-header.hidden {
-            transform: translateY(-100%);
-        }
-        [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
@@ -142,7 +126,7 @@
             background-color: var(--accent-color); transition: width var(--transition-speed) ease;
         }
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
+        
         #hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
@@ -151,37 +135,17 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
             background-color: var(--primary-color);
         }
-        #hero-video {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-        .hero-content { 
-            max-width: 800px;
-            animation: fade-in-up 1s ease-out forwards;
-            z-index: 1;
-        }
-        .hero-content h1 {
-            color: #fff;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-        }
+        #hero-video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
+        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); }
         .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
-        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
         
         @keyframes fade-in-up {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* =================================================================
-        DEFERRABLE CSS
-        ================================================================== */
-
+        
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
         .btn {
             display: inline-block; padding: 12px 28px; border-radius: 50px;
@@ -190,6 +154,8 @@
         }
         .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
         .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
+        .btn-secondary { background-color: transparent; color: #fff; border: 2px solid #fff; }
+        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
 
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -200,175 +166,126 @@
             background-color: var(--primary-color); transition: all var(--transition-speed) ease-in-out;
             border-radius: 3px;
         }
-        [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
-        
-        .commitment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: flex-start;
-        }
-        .commitment-text h3 { margin-top: 2rem; font-size: 1.3rem; }
-        .commitment-text h3:first-child { margin-top: 0; }
-        .commitment-focus { background-color: var(--surface-color); padding: 2rem; border-radius: 10px; }
-        .commitment-focus h3 { margin-bottom: 1.5rem; }
-        .commitment-focus ul { list-style: none; padding: 0; }
-        .commitment-focus li { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
-        .commitment-focus li:last-child { margin-bottom: 0; }
-        .commitment-focus li i {
-            font-size: 1.8rem; color: var(--accent-color); margin-right: 1.5rem;
-            margin-top: 5px; width: 30px; text-align: center;
-        }
+        body.nav-open { overflow: hidden; }
+
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-content); align-items: flex-start; }
+        .about-focus { background-color: var(--surface-color); padding: 2.5rem; border-radius: var(--border-radius); }
+        .about-focus h3 { margin-bottom: 1.5rem; }
+        .about-focus ul { list-style: none; padding: 0; }
+        .about-focus li { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .about-focus li:last-child { margin-bottom: 0; }
+        .about-focus li i { font-size: 1.8rem; color: var(--accent-color); margin-right: 1.5rem; margin-top: 5px; width: 30px; text-align: center; }
 
         #values { background-color: var(--surface-color); }
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .value-card {
-            text-align: center; padding: 2rem; border-radius: 10px;
-            background-color: var(--background-color);
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-        }
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .value-card { text-align: center; padding: 2.5rem 2rem; border-radius: var(--border-radius); background-color: var(--background-color); transition: transform var(--transition-speed), box-shadow var(--transition-speed); }
+        .value-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
         .value-card i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; }
 
-        .team-member {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--surface-color);
-            padding: 3rem;
-            border-radius: 10px;
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-        }
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        }
-        .team-member img {
-            width: 100%;
-            border-radius: 50%;
-            border: 5px solid var(--accent-color);
-        }
-        .team-member h3 { font-size: 1.8rem; }
-        .team-member .role {
-            font-weight: 600; color: var(--accent-color);
-            margin-bottom: 1rem; display: block;
-        }
+        .team-member-card { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: center; max-width: 900px; margin: 0 auto; background-color: var(--surface-color); padding: 3rem; border-radius: var(--border-radius); }
+        .team-member-card img { width: 100%; border-radius: 50%; border: 5px solid var(--accent-color); }
+        .team-member-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem;}
+        .team-member-card .role { font-weight: 600; color: var(--accent-color); margin-bottom: 1rem; display: block; }
 
-        #cta-section { background-color: var(--surface-color); text-align: center; padding: 4rem 0; }
-        #cta-section .container { max-width: 700px; }
-        #cta-section h2 { font-size: 2.2rem; }
-        #cta-section p { margin: 1.5rem 0; font-size: 1.1rem; }
-        #cta-section .btn { font-size: 1.1rem; padding: 15px 30px; }
+        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
+        form.loading .btn { cursor: wait; background-color: var(--text-muted-color); border-color: var(--text-muted-color); }
+        form.loading .btn::after { content: ''; display: inline-block; width: 1em; height: 1em; border: 2px solid rgba(255,255,255,0.5); border-left-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite; margin-left: 0.5rem; vertical-align: middle; }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
-        [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
-        .footer-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem; margin-bottom: 3rem;
-        }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1.2fr 1.5fr 1fr; gap: 3rem; margin-bottom: 3rem; }
         .footer-grid h4 { color: #fff; }
-        [data-theme="dark"] .footer-grid h4 { color: var(--accent-color); }
         .footer-grid p, .footer-grid li, .footer-grid a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-speed); }
         .footer-grid a:hover { color: #fff; }
         .footer-grid ul { list-style: none; }
+        .footer-grid ul li { margin-bottom: 0.75rem; }
         .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
         .social-links a { font-size: 1.5rem; color: #fff; }
         .social-links a:hover { color: var(--accent-color); }
-        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        .footer-bottom a { color: #fff; }
+        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; text-align: center; align-items: center; gap: 1rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom p { margin: 0; }
+        .footer-bottom a { color: #fff; text-decoration: none; }
+        .footer-bottom a:hover { text-decoration: underline; }
 
-        .back-to-top, .theme-toggle {
-            position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
-            background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-            cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden;
-            transition: opacity var(--transition-speed), visibility var(--transition-speed), transform var(--transition-speed);
-        }
-        .back-to-top:hover, .theme-toggle:hover { transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed), transform var(--transition-speed); }
+        .back-to-top:hover { transform: scale(1.1); }
         .back-to-top.show { opacity: 1; visibility: visible; }
-        .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
-
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
-            z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
-            visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed);
-        }
+        
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed); }
         .modal-overlay.show { opacity: 1; visibility: visible; }
-        .modal-content {
-            background-color: var(--background-color); border-radius: 15px; max-width: 800px; width: 95%;
-            position: relative; transform: scale(0.95);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: flex; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
+        .modal-content { background-color: var(--background-color); border-radius: 15px; max-width: 800px; width: 95%; position: relative; transform: scale(0.95); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); display: flex; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         .modal-overlay.show .modal-content { transform: scale(1); }
-        .modal-info-panel { background-color: var(--primary-color); color: #fff; padding: 3rem; width: 40%; }
-        [data-theme="dark"] .modal-info-panel { background-color: var(--surface-color); }
+        .modal-info-panel { background-color: var(--primary-color); color: #fff; padding: 3rem; width: 40%; display: flex; flex-direction: column; justify-content: center;}
         .modal-info-panel h3 { color: #fff; font-size: 1.8rem; }
-        .modal-info-panel ul { list-style: none; }
-        .modal-info-panel li i { color: var(--accent-color); margin-right: 10px; width: 20px; }
-        .modal-form-panel { padding: 3rem; width: 60%; }
-        .modal-close-btn {
-            position: absolute; top: 15px; right: 20px; background: none; border: none;
-            font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
-        }
+        .modal-info-panel p { color: rgba(255,255,255,0.8); }
+        .modal-info-panel ul { list-style: none; margin-top: 2rem; padding: 0; }
+        .modal-info-panel li { display: flex; align-items: center; margin-bottom: 1rem; font-size: 1.1rem; }
+        .modal-info-panel li i { color: var(--accent-color); margin-right: 15px; width: 24px; text-align: center; }
+        .modal-form-panel { padding: 3rem; width: 60%; display: flex; flex-direction: column; justify-content: center; }
+        .modal-form-panel h3 { margin-bottom: 0.5rem; }
+        .modal-form-intro { margin-bottom: 1.5rem; color: var(--text-muted-color); }
+        .modal-close-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10; }
 
-        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
-        form.loading .btn {
-            cursor: wait;
-            background-color: var(--text-muted-color);
-            border-color: var(--text-muted-color);
-        }
-        form.loading .btn::after {
-            content: '';
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            border: 2px solid rgba(255,255,255,0.5);
-            border-left-color: #fff;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-            margin-left: 0.5rem;
-            vertical-align: middle;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .modal-form .form-row { margin-bottom: 1.5rem; display: flex; gap: 1rem; }
+        .modal-form .form-group { flex: 1; }
+        .modal-form .form-row .form-group { margin-bottom: 0; }
+        .modal-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        .modal-form input, .modal-form select { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #ddd; background-color: #fdfdfd; color: var(--text-color); font-size: 1rem; line-height: 1.5; transition: border-color var(--transition-speed), box-shadow var(--transition-speed); }
+        .modal-form input:focus, .modal-form select:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+        .modal-form select { appearance: none; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); background-position: right 0.7rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem; }
+        .modal-form .btn { width: 100%; padding: 14px 28px; }
+
+        .main-footer address {
+            font-style: normal;
+            line-height: 1.8;
         }
 
         @media (max-width: 992px) {
             .nav-links {
-                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
-                background-color: var(--background-color); flex-direction: column; justify-content: center;
-                align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--background-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: transform var(--transition-speed) ease-in-out;
                 transform: translateX(100%);
             }
-            .nav-links.nav-active { transform: translateX(0); }
+            .nav-links.nav-active {
+                transform: translateX(0);
+            }
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
             .hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
-            .team-member { grid-template-columns: 1fr; text-align: center; }
-            .team-member img { max-width: 200px; margin: 0 auto 2rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
         }
         @media (max-width: 768px) {
             .hero-content p { font-size: 1rem; }
-            .footer-grid { text-align: center; }
-            .social-links { justify-content: center; }
-            .modal-content {
-                flex-direction: column; max-width: 500px;
-                max-height: 90vh; overflow-y: auto;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
+            .social-links { justify-content: center; }
+            .footer-bottom {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .modal-content { flex-direction: column; max-width: 500px; max-height: 90vh; overflow-y: auto; }
             .modal-info-panel, .modal-form-panel { width: 100%; padding: 2rem; }
+            .modal-form .form-row { flex-direction: column; gap: 0; margin-bottom: 0;}
+            .modal-form .form-row .form-group { margin-bottom: 1.5rem; }
+            .team-member-card { grid-template-columns: 1fr; text-align: center; }
+            .team-member-card img { max-width: 200px; margin: 0 auto 2rem; }
         }
     </style>
 </head>
@@ -376,15 +293,17 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="main-header">
         <nav class="navbar container">
-            <a href="index.html" class="logo">Wisetax Accountants</a>
+            <a href="index.html" class="logo" aria-label="Wisetax Accountants Homepage">
+                Wisetax Accountants
+            </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
             </ul>
-            <button class="hamburger" aria-label="Toggle menu" role="button" aria-expanded="false" aria-controls="nav-links">
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -392,41 +311,41 @@
         </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" data-page-id="about">
         <!-- Hero Section -->
-        <section id="hero">
+        <section id="hero" aria-labelledby="hero-title">
             <div class="hero-video-wrapper">
                 <video autoplay loop muted playsinline preload="metadata" id="hero-video" poster="https://placehold.co/1920x1080/001f3f/001f3f.webp?text=+" width="1920" height="1080">
                     <source src="wisetax-hero.webm" type="video/webm">
                     <source src="wisetax-hero.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                    Your browser does not support the video tag. A blue background is shown instead.
                 </video>
             </div>
             <div class="hero-content">
-                <h1>About Wisetax Accountants</h1>
-                <p>Your dedicated partners in financial clarity, proudly serving the Slough business community since 2008.</p>
+                <h1 id="hero-title">About Wisetax Accountants</h1>
+                <p>Your dedicated partners in financial clarity, proudly serving the Slough business community since 2015.</p>
                 <div class="btn-group">
-                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-                    <a href="contact.html" class="btn btn-secondary">Book a Consultation</a>
+                    <button id="open-modal-btn-cta" class="btn btn-primary">Book a Consultation</button>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </section>
-
+        
         <!-- Our Commitment Section -->
-        <section id="story">
+        <section id="story" aria-labelledby="story-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="fade-in">Our Commitment: From Slough, For Slough</h2>
+                    <h2 id="story-title" class="fade-in">Our Commitment: From Slough, For Slough</h2>
                     <p class="fade-in">Wisetax Accountants was founded with a simple mission: to provide the small and medium-sized businesses of Slough with accessible, expert financial guidance. We are more than just accountants; we are partners in your success, deeply invested in the prosperity of our local community.</p>
                 </div>
-                <div class="commitment-grid">
-                    <div class="commitment-text fade-in">
+                <div class="about-content">
+                    <div class="about-text fade-in">
                         <h3>Growing With Our Community</h3>
-                        <p>Since 2008, we've grown alongside our clients, adapting to new technologies and navigating an ever-changing economic landscape. Our commitment has always been to empower local businesses through financial clarity and proactive, strategic advice, helping them thrive right here in the Thames Valley.</p>
+                        <p>Since 2015, we've grown alongside our clients, adapting to new technologies and navigating an ever-changing economic landscape. Our commitment has always been to empower local businesses through financial clarity and proactive, strategic advice, helping them thrive right here in the Thames Valley.</p>
                         <h3>Our Client-First Approach</h3>
                         <p>We believe the best results come from building strong relationships. We take the time to understand your unique situation, challenges, and ambitions. This allows us to provide truly personalised service and advice that makes a tangible difference to your bottom line.</p>
                     </div>
-                    <div class="commitment-focus fade-in">
+                    <div class="about-focus fade-in">
                         <h3>Who We Serve</h3>
                         <ul>
                             <li><i class="fas fa-rocket"></i> <span><strong>Startups & Entrepreneurs</strong><br>Guiding new ventures from formation to growth.</span></li>
@@ -440,25 +359,25 @@
         </section>
 
         <!-- Core Values Section -->
-        <section id="values">
+        <section id="values" aria-labelledby="values-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="fade-in">Our Core Values</h2>
+                    <h2 id="values-title" class="fade-in">Our Core Values</h2>
                     <p class="fade-in">These principles are the bedrock of our firm and guide every interaction we have with our clients.</p>
                 </div>
                 <div class="values-grid">
                     <div class="value-card fade-in">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         <h3>Integrity</h3>
                         <p>We operate with complete transparency and honesty. Your trust is our most valuable asset, and we work tirelessly to earn and maintain it.</p>
                     </div>
                     <div class="value-card fade-in">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
                         <h3>Proactivity</h3>
                         <p>We don't just record history; we help you write the future. We proactively identify opportunities and challenges to keep you ahead of the curve.</p>
                     </div>
                     <div class="value-card fade-in">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
                         <h3>Partnership</h3>
                         <p>We see ourselves as an extension of your team. Your goals become our goals, and we are committed to providing unwavering support on your journey.</p>
                     </div>
@@ -467,49 +386,43 @@
         </section>
 
         <!-- Meet The Founder Section -->
-        <section id="team">
+        <section id="team" aria-labelledby="team-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="fade-in">Meet Our Founder</h2>
+                    <h2 id="team-title" class="fade-in">Meet Our Founder</h2>
                     <p class="fade-in">The driving force behind our client-focused approach.</p>
                 </div>
-                <div class="team-member fade-in">
-                    <div class="team-photo">
-                        <img src="https://placehold.co/300x300/001f3f/ffffff.webp?text=AS" alt="Headshot of Ahmed Sami Abbasi, Founder of Wisetax Accountants" width="300" height="300" loading="lazy" decoding="async">
-                    </div>
+                <div class="team-member-card fade-in">
+                    <img src="https://placehold.co/300x300/001f3f/ffffff.webp?text=AS" alt="Headshot of Ahmed Sami Abbasi, Founder of Wisetax Accountants" width="200" height="200" loading="lazy" decoding="async">
                     <div class="team-bio">
-                        <h3>Ahmed Sami Abbasi, ACCA, IFA</h3>
-                        <span class="role">Founder & Head Accountant</span>
+                        <h3>Ahmed Sami Abbasi</h3>
+                        <span class="role">FFA, FTA, FIPA, MBA, ARA</span>
                         <p>With over two decades of experience in public practice accounting, Sami founded Wisetax to bring a personal, proactive approach to the businesses of Slough. A certified ATOL Reporting Accountant, he has a specialist understanding of the travel industry and a passion for helping entrepreneurs navigate the complexities of business finance.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="cta-section">
-            <div class="container fade-in">
-                <h2>Ready to Partner With Us?</h2>
-                <p>Experience the Wisetax difference for yourself. Book a free, no-obligation consultation to discuss how we can help your business achieve its financial goals.</p>
-                <button id="open-modal-btn-cta" class="btn btn-primary">Book a Consultation</button>
-            </div>
-        </section>
     </main>
 
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
+                <div><h4>About Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth, serving Slough and the Thames Valley since 2015.</p></div>
                 <div><h4>Quick Links</h4><ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul></div>
-                <div><h4>Contact Us</h4>
-                    <p>1st Floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
-                    <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
-                    <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
+                <div><h4>Contact Our Slough Office</h4>
+                    <address>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st Floor, 7 Mackenzie Street<br>
+                    Slough, SL1 1XQ</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:01753531892">01753 531892</a></p>
+                    </address>
                 </div>
                 <div><h4>Connect With Us</h4><div class="social-links">
                     <a href="https://uk.linkedin.com/company/wisetax-accountants-uk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -517,25 +430,58 @@
                     <a href="https://www.facebook.com/WisetaxUK" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 </div></div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Wisetax Accountants | All Rights Reserved | <a href="privacy.html">Privacy Notice</a></p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wisetax Accountants | All Rights Reserved | <a href="privacy.html">Privacy Notice</a></p>
+            </div>
         </div>
     </footer>
-
+    
     <!-- Consultation Modal -->
     <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title" hidden>
         <div class="modal-content">
             <div class="modal-info-panel">
-                <h3>Start the Conversation</h3>
-                <p>A free, no-obligation chat to see how we can help you achieve financial clarity.</p>
+                <h3 id="consultation-modal-title">Unlock Your Business Potential</h3>
+                <p>Book a free, no-obligation chat with our expert Slough accountants. Discover how we can help you:</p>
+                <ul>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Develop a smart tax strategy</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Streamline your bookkeeping</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Identify growth opportunities</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Receive a fixed-fee quote</li>
+                </ul>
             </div>
             <div class="modal-form-panel">
                 <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-                <h3 id="consultation-modal-title">Book a Free Consultation</h3>
+                <h3>Book Your Free Consultation</h3>
+                <p class="modal-form-intro">Fill in the details below and we'll get back to you shortly.</p>
                 <form class="modal-form" novalidate>
                     <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
-                    <div class="form-group"><label for="modal-name">Full Name</label><input type="text" id="modal-name" name="name" required></div>
-                    <div class="form-group"><label for="modal-email">Email</label><input type="email" id="modal-email" name="email" required></div>
-                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <input type="hidden" name="subject" value="Free Consultation Request from Wisetax Website">
+                    <div class="form-row">
+                         <div class="form-group">
+                            <label for="modal-name">Full Name *</label>
+                            <input type="text" id="modal-name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-email">Email *</label>
+                            <input type="email" id="modal-email" name="email" required autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-phone">Phone Number</label>
+                        <input type="tel" id="modal-phone" name="phone" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-service">Service of Interest</label>
+                        <select id="modal-service" name="service">
+                            <option value="">-- Please Select --</option>
+                            <option value="Tax & Compliance">Tax & Compliance</option>
+                            <option value="Bookkeeping & VAT">Bookkeeping & VAT</option>
+                            <option value="Growth Advisory">Growth Advisory</option>
+                            <option value="New Business Startup">New Business Startup</option>
+                            <option value="Unsure / General Enquiry">Unsure / General Enquiry</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request My Consultation</button>
                     <p class="form-status" role="status"></p>
                 </form>
             </div>
@@ -543,9 +489,15 @@
     </div>
 
     <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-
+    
     <script>
+        // --- PAGE TRANSITION & APP INITIALIZER ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '1';
+            new WisetaxApp();
+        });
+
+        // Main App Initializer
         class WisetaxApp {
             constructor() {
                 this.initComponents();
@@ -554,34 +506,36 @@
 
             initComponents() {
                 this.mobileNav = new MobileNav();
-                this.themeToggle = new ThemeToggle();
                 this.backToTop = new BackToTop();
                 this.scrollAnimations = new ScrollAnimations();
                 this.modalSystem = new ModalSystem();
                 this.formHandler = new FormHandler();
-            }
 
+                // Components not on this page won't initialize
+                if (document.querySelector('.faq-accordion')) {
+                    this.faqAccordion = new FAQAccordion();
+                }
+                if (document.querySelector('.stats-grid')) {
+                    this.statsCounter = new StatsCounter();
+                }
+                if (document.querySelector('.testimonial-slider-wrapper')) {
+                    this.testimonialSlider = new ModernSlider('.testimonial-slider-wrapper');
+                }
+            }
+            
             initEventListeners() {
-                let lastScrollTop = 0;
-                const header = document.querySelector('.main-header');
-                window.addEventListener('scroll', () => {
-                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
-                        header.classList.add('hidden');
-                    } else {
-                        header.classList.remove('hidden');
-                    }
-                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                }, { passive: true });
+                // Keep header visible, no hiding on scroll
             }
         }
+
+        // --- COMPONENT CLASSES ---
 
         class MobileNav {
             constructor() {
                 this.hamburger = document.querySelector('.hamburger');
                 this.navLinks = document.querySelector('.nav-links');
                 if (!this.hamburger || !this.navLinks) return;
-
+                
                 this.hamburger.addEventListener('click', this.toggleNav.bind(this));
             }
 
@@ -591,45 +545,16 @@
                  document.body.classList.toggle('nav-open', isActive);
             }
         }
-
-        class ThemeToggle {
-            constructor() {
-                this.toggleButton = document.querySelector('.theme-toggle');
-                if (!this.toggleButton) return;
-
-                this.themeIcon = this.toggleButton.querySelector('i');
-                this.initTheme();
-                this.toggleButton.addEventListener('click', this.toggleTheme.bind(this));
-            }
-
-            initTheme() {
-                const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                this.setTheme(savedTheme);
-            }
-
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                this.setTheme(newTheme);
-            }
-
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                this.themeIcon.classList.toggle('fa-sun', theme === 'dark');
-                this.themeIcon.classList.toggle('fa-moon', theme === 'light');
-            }
-        }
-
+        
         class BackToTop {
             constructor() {
                 this.button = document.querySelector('.back-to-top');
                 if (!this.button) return;
-
+                
                 window.addEventListener('scroll', this.checkScroll.bind(this), { passive: true });
                 this.button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
             }
-
+            
             checkScroll() {
                 this.button.classList.toggle('show', window.scrollY > 300);
             }
@@ -649,25 +574,28 @@
                 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
             }
         }
-        
+
         class ModalSystem {
             constructor() {
                 this.modals = document.querySelectorAll('.modal-overlay');
                 this.openButtons = document.querySelectorAll('#open-modal-btn, #open-modal-btn-cta');
                 this.focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
+                
                 this.init();
             }
 
             init() {
-                this.openButtons.forEach(btn => btn.addEventListener('click', () => this.openModal(document.getElementById('consultation-modal'))));
-
+                this.openButtons.forEach(btn => btn.addEventListener('click', (e) => {
+                    this.previouslyFocusedElement = e.currentTarget;
+                    this.openModal(document.getElementById('consultation-modal'));
+                }));
+                
                 this.modals.forEach(modal => {
                     modal.addEventListener('click', e => {
                         if (e.target === modal || e.target.closest('.modal-close-btn')) this.closeModal(modal);
                     });
                 });
-
+                
                 document.addEventListener('keydown', e => {
                     if (e.key === 'Escape') {
                         const openModal = document.querySelector('.modal-overlay.show');
@@ -677,22 +605,25 @@
             }
 
             openModal(modal) {
-                this.previouslyFocusedElement = document.activeElement;
                 modal.removeAttribute('hidden');
-                modal.classList.add('show');
                 document.body.style.overflow = 'hidden';
-
-                this.trapFocus(modal);
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    this.trapFocus(modal);
+                }, 10);
             }
 
             closeModal(modal) {
                 modal.classList.remove('show');
-                modal.setAttribute('hidden', true);
                 document.body.style.overflow = '';
+                
+                modal.addEventListener('transitionend', () => {
+                    modal.setAttribute('hidden', true);
+                }, { once: true });
 
                 if(this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
             }
-
+            
             trapFocus(modal) {
                 const focusableContent = modal.querySelectorAll(this.focusableElements);
                 const firstFocusable = focusableContent[0];
@@ -717,14 +648,14 @@
                 });
             }
         }
-
+        
         class FormHandler {
             constructor() {
                 document.querySelectorAll('.modal-form').forEach(form => {
                     form.addEventListener('submit', this.handleFormSubmit.bind(this));
                 });
             }
-
+            
             async handleFormSubmit(event) {
                 event.preventDefault();
                 const form = event.target;
@@ -746,9 +677,9 @@
                         headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
                         body: json
                     });
-
+                    
                     const result = await response.json();
-
+                    
                     if (response.ok) {
                         statusElement.textContent = result.message || "Success! We'll be in touch soon.";
                         statusElement.style.color = 'green';
@@ -762,15 +693,10 @@
                 } finally {
                     form.classList.remove('loading');
                     submitButton.disabled = false;
-                    setTimeout(() => { statusElement.textContent = '', statusElement.style.color = ''; }, 5000);
+                    setTimeout(() => { statusElement.textContent = ''; }, 5000);
                 }
             }
         }
-
-        // --- INITIALIZE THE APP ---
-        document.addEventListener('DOMContentLoaded', () => {
-            new WisetaxApp();
-        });
     </script>
 </body>
 </html>
