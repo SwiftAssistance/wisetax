@@ -283,13 +283,27 @@
 
         @media (max-width: 992px) {
             .nav-links {
-                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
-                background-color: var(--background-color); flex-direction: column; justify-content: center;
-                align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: transform var(--transition-speed) ease-in-out; gap: 2.5rem;
+                position: fixed;
+                top: 0;
+                /* FIX: Changed right from -100% to 0. 
+                   The menu is now positioned off-screen using `transform` only, which is more reliable. */
+                right: 0;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: var(--background-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: transform var(--transition-speed) ease-in-out;
+                /* This transform pushes the menu off-screen to the right. */
                 transform: translateX(100%);
             }
-            .nav-links.nav-active { transform: translateX(0); }
+            /* When .nav-active is added by JS, this brings the menu into view. */
+            .nav-links.nav-active {
+                transform: translateX(0);
+            }
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
@@ -1040,4 +1054,3 @@
     </script>
 </body>
 </html>
-
