@@ -86,8 +86,9 @@
             color: var(--text-color);
             line-height: 1.7;
             font-size: var(--font-size-base);
-            transition: background-color var(--transition-speed), color var(--transition-speed);
             overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
         }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
@@ -172,7 +173,7 @@
         }
         .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
         .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
-        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
+        .btn-secondary { background-color: transparent; color: #fff; border: 2px solid #fff; }
         .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
 
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
@@ -470,13 +471,13 @@
       "openingHours": "Mo-Fr 09:00-17:00",
       "areaServed": {
         "@type": "Place",
-        "name": ["Slough", "Windsor", "Maidenhead", "Langley", "Burnham", "Iver", "Thames Valley", "Bracknell", "Wokingham", "Old Windsor"]
+        "name": ["Slough", "Windsor", "Maidenhead", "Langley", "Burnham", "Iver", "Thames Valley"]
       },
       "provider": {
         "@type": "Person",
         "name": "Ahmed Sami Abbasi",
         "jobTitle": "Director",
-        "knowsAbout": ["FTA", "FFA", "MIBA","ARA", " "ATOL Certified Accountant"]
+        "knowsAbout": ["FFA", "FTA", "FIPA", "MBA", "ARA"]
       }
     }
     </script>
@@ -528,12 +529,12 @@
             <div class="container about-content">
                 <div class="about-text fade-in">
                     <h2 id="about-title">Your Local Slough Accountants & Tax Advisors</h2>
-                    <p>Since 2015, Wisetax Accountants has been a cornerstone of the Slough business community. We empower SMEs, ambitious startups, and sole traders across the Thames Valley with proactive financial strategies. Our director's experience since 2008 ensures that our advice is not just technically sound, but commercially astute.</p>
+                    <p>Since 2015, Wisetax Accountants has been a cornerstone of the Slough business community. We empower SMEs, ambitious startups, and sole traders across the Thames Valley with proactive financial strategies. Our deep understanding of the local economic landscape means we provide advice that’s not just technically sound, but commercially astute</p>
                     <div class="team-member">
                         <img src="https://placehold.co/120x120/001f3f/ffffff.webp?text=AS" alt="Director Ahmed Sami Abbasi, Chartered Accountant in Slough" width="60" height="60" loading="lazy" decoding="async">
                         <div>
                             <h4>Ahmed Sami Abbasi, Director</h4>
-                            <p>FFA, FTA, FIPA, MBA, ARA</p>
+                            <p>IFA, FFA, CIMA, ATOL Certified Accountant</p>
                         </div>
                     </div>
                 </div>
@@ -811,6 +812,11 @@
     <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     
     <script>
+        // --- PAGE TRANSITION SCRIPT ---
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
         // Main App Initializer
         class WisetaxApp {
             constructor() {
