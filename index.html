@@ -338,7 +338,12 @@
         .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
         .social-links a { font-size: 1.5rem; color: #fff; }
         .social-links a:hover { color: var(--accent-color); }
-        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom { 
+            display: flex;
+            justify-content: center;
+            padding-top: 2rem; 
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        }
         .footer-bottom p { margin: 0; }
         .footer-bottom a { color: #fff; }
 
@@ -407,6 +412,8 @@
             padding-right: 2.5rem;
         }
         .modal-form .btn { width: 100%; padding: 14px 28px; }
+
+        .main-footer address { font-style: normal; }
 
 
         @media (max-width: 992px) {
@@ -529,7 +536,6 @@
                             <p>IFA, FFA, CIMA, ATOL Certified Accountant</p>
                         </div>
                     </div>
-                    <a href="about.html" class="btn btn-primary">Meet The Team</a>
                 </div>
                 <div class="stats-grid fade-in">
                     <div class="stat-item">
@@ -537,8 +543,8 @@
                         <p class="stat-label">Happy Clients in Slough</p>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="15">0</span>+
-                        <p class="stat-label">Years Director Experience</p>
+                        <span class="stat-number" data-target="10">0</span>+
+                        <p class="stat-label">Years of Experience</p>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number" data-target="10">0</span>M+
@@ -613,6 +619,7 @@
                     <div class="industry-card fade-in"><i class="fas fa-users" aria-hidden="true"></i><h4>Professional Services</h4><p>Accounting for consultants, marketers, solicitors, and other service-based businesses.</p></div>
                     <div class="industry-card fade-in"><i class="fas fa-hospital" aria-hidden="true"></i><h4>Healthcare & Care Homes</h4><p>Specialist accounting for locums, private practices, and care sector providers.</p></div>
                     <div class="industry-card fade-in"><i class="fas fa-home" aria-hidden="true"></i><h4>Landlords & Property</h4><p>Property tax advice, rental income statements, and capital gains planning.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-plane-departure" aria-hidden="true"></i><h4>Travel Agents (ATOL)</h4><p>Specialist ATOL Annual Accountants’ Reports and compliance advice for travel agents.</p></div>
                 </div>
             </div>
         </section>
@@ -710,6 +717,7 @@
                     <div class="contact-info">
                         <h3>Contact Details</h3>
                         <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:01753531892">01753 531892</a></p>
                         <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
                         <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Wisetax Accountants<br>1st Floor<br>7 Mackenzie Street<br>Slough<br>SL1 1XQ</p>
                     </div>
@@ -731,10 +739,11 @@
                 </ul></div>
                 <div><h4>Contact Our Slough Office</h4>
                     <address>
-                    1st Floor, 7 Mackenzie Street<br>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st Floor, 7 Mackenzie Street<br>
                     Slough, SL1 1XQ<br>
-                    Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a><br>
-                    Phone: <a href="tel:07533686857">07533 686857</a>
+                    <i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a><br>
+                    <i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a><br>
+                    <i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:01753531892">01753 531892</a>
                     </address>
                 </div>
                 <div><h4>Connect With Us</h4><div class="social-links">
@@ -906,20 +915,42 @@
             
             animateCounters(grid) {
                 const counters = grid.querySelectorAll('.stat-number');
+                const animationDuration = 2000; // Duration in milliseconds for all counters
+
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
-                    let current = 0;
-                    const update = () => {
-                        const increment = Math.ceil(target / 100);
-                        current += increment;
-                        if (current < target) {
-                            counter.innerText = Math.ceil(current);
-                            requestAnimationFrame(update);
+                    let startTime = null;
+
+                    const step = (timestamp) => {
+                        if (!startTime) startTime = timestamp;
+                        const progress = timestamp - startTime;
+                        const percentage = Math.min(progress / animationDuration, 1);
+                        const currentValue = Math.floor(percentage * target);
+                        
+                        counter.innerText = currentValue;
+
+                        if (progress < animationDuration) {
+                            requestAnimationFrame(step);
                         } else {
                             counter.innerText = target;
                         }
                     };
-                    update();
+                    requestAnimationFrame(step);
+                });
+            }
+        }
+        
+        class FAQAccordion {
+            constructor() {
+                this.accordion = document.querySelector('.faq-accordion');
+                if (!this.accordion) return;
+                
+                this.accordion.addEventListener('click', e => {
+                    const question = e.target.closest('.faq-question');
+                    if (question) {
+                        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                        question.setAttribute('aria-expanded', !isExpanded);
+                    }
                 });
             }
         }
@@ -1040,21 +1071,6 @@
             }
         }
 
-        class FAQAccordion {
-            constructor() {
-                this.accordion = document.querySelector('.faq-accordion');
-                if (!this.accordion) return;
-                
-                this.accordion.addEventListener('click', e => {
-                    const question = e.target.closest('.faq-question');
-                    if (question) {
-                        const isExpanded = question.getAttribute('aria-expanded') === 'true';
-                        question.setAttribute('aria-expanded', !isExpanded);
-                    }
-                });
-            }
-        }
-
         class ModalSystem {
             constructor() {
                 this.modals = document.querySelectorAll('.modal-overlay');
@@ -1065,7 +1081,10 @@
             }
 
             init() {
-                this.openButtons.forEach(btn => btn.addEventListener('click', () => this.openModal(document.getElementById('consultation-modal'))));
+                this.openButtons.forEach(btn => btn.addEventListener('click', (e) => {
+                    this.previouslyFocusedElement = e.currentTarget;
+                    this.openModal(document.getElementById('consultation-modal'));
+                }));
                 
                 this.modals.forEach(modal => {
                     modal.addEventListener('click', e => {
@@ -1083,22 +1102,25 @@
 
             openModal(modal) {
                 modal.removeAttribute('hidden');
-                modal.classList.add('show');
                 document.body.style.overflow = 'hidden';
-
-                this.trapFocus(modal);
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    this.trapFocus(modal);
+                }, 10);
             }
 
             closeModal(modal) {
                 modal.classList.remove('show');
-                modal.setAttribute('hidden', true);
                 document.body.style.overflow = '';
                 
+                modal.addEventListener('transitionend', () => {
+                    modal.setAttribute('hidden', true);
+                }, { once: true });
+
                 if(this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
             }
             
             trapFocus(modal) {
-                this.previouslyFocusedElement = document.activeElement;
                 const focusableContent = modal.querySelectorAll(this.focusableElements);
                 const firstFocusable = focusableContent[0];
                 const lastFocusable = focusableContent[focusableContent.length - 1];
@@ -1179,5 +1201,4 @@
     </script>
 </body>
 </html>
-
 
