@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en-GB" data-theme="light">
 <head>
     <!-- =================================================================
     METADATA & PERFORMANCE HINTS
     ================================================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisetax Accountants | Our Comprehensive Services</title>
-    <meta name="description" content="Explore the full range of expert accounting and financial services offered by Wisetax Accountants, including tax planning, bookkeeping, and business advisory.">
+    <title>Our Comprehensive Services | Wisetax Accountants</title>
+    <meta name="description" content="Explore the full range of expert accounting and financial services offered by Wisetax Accountants in Slough, including tax planning, bookkeeping, and business advisory.">
     <meta name="keywords" content="accounting services slough, tax services, bookkeeping, VAT returns, business advisory, corporation tax, self assessment, ATOL certified accountant, payroll services, company formation">
     <meta name="author" content="Wisetax Accountants">
+    <link rel="canonical" href="https://www.wisetax.co.uk/services.html">
 
     <!-- PWA & Theme Color -->
     <meta name="theme-color" content="#001F3F">
@@ -24,21 +25,24 @@
     <!-- Preload critical assets -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Wisetax Accountants | Our Services">
-    <meta property="og:description" content="Comprehensive accounting packages designed for your business success.">
+    <meta property="og:title" content="Our Comprehensive Services | Wisetax Accountants">
+    <meta property="og:description" content="Comprehensive accounting packages designed for your business success in Slough.">
     <meta property="og:image" content="https://placehold.co/1200x630/001f3f/ffffff?text=Wisetax">
     <meta property="og:url" content="https://www.wisetax.co.uk/services.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="wisetax-logo.jpg">
+    <link rel="apple-touch-icon" href="wisetax-logo.jpg">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    
     <style>
         /* =================================================================
         CRITICAL CSS (INLINE FOR PERFORMANCE)
@@ -61,17 +65,8 @@
             --border-radius: 10px;
         }
 
-        [data-theme="dark"] {
-            --primary-color: #FFFFFF;
-            --accent-color: #3B82F6;
-            --background-color: #121212;
-            --surface-color: #1E1E1E;
-            --text-color: #E0E0E0;
-            --text-muted-color: #A9A9A9;
-        }
-
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+        
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after {
@@ -89,19 +84,20 @@
             color: var(--text-color);
             line-height: 1.7;
             font-size: var(--font-size-base);
-            transition: background-color var(--transition-speed), color var(--transition-speed);
             overflow-x: hidden;
         }
+        main { transition: opacity 0.3s ease-in-out; }
+        body.is-navigating main { opacity: 0; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-content); }
         h1, h2, h3, h4 { font-family: var(--heading-font); color: var(--primary-color); margin-bottom: 1rem; line-height: 1.2; }
-        h1 { font-size: var(--font-size-h1); }
-        h2 { font-size: var(--font-size-h2); }
+        h1 { font-size: var(--font-size-h1); } 
+        h2 { font-size: var(--font-size-h2); } 
         h3 { font-size: 1.5rem; }
         h4 { font-size: 1.2rem; }
         p { margin-bottom: 1rem; max-width: 75ch; }
         section { padding: var(--space-section) 0; }
-
+        
         .skip-link {
             position: absolute; top: -100%; left: 0;
             background: var(--accent-color); color: white;
@@ -110,17 +106,14 @@
             border-bottom-right-radius: 8px;
         }
         .skip-link:focus { top: 0; }
-
+        
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1rem 0;
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: background-color var(--transition-speed), transform 0.3s ease-out;
-            transform: translateY(0);
+            transition: background-color var(--transition-speed);
         }
-        .main-header.hidden { transform: translateY(-100%); }
-        [data-theme="dark"] .main-header { background-color: rgba(18, 18, 18, 0.8); }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: var(--heading-font); font-size: 1.5rem; color: var(--accent-color); text-decoration: none; font-weight: 700; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 2rem; }
@@ -133,7 +126,7 @@
             background-color: var(--accent-color); transition: width var(--transition-speed) ease;
         }
         .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-
+        
         #hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; color: #fff; position: relative; padding: 0; overflow: hidden;
@@ -142,37 +135,17 @@
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
             background-color: var(--primary-color);
         }
-        #hero-video {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-        .hero-content { 
-            max-width: 800px; 
-            animation: fade-in-up 1s ease-out forwards;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-content h1 { 
-            color: #fff;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-        }
-        .hero-content p { 
-            font-size: 1.2rem; 
-            margin-bottom: 2rem; 
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-        }
+        #hero-video { width: 100%; height: 100%; object-fit: cover; }
+        .hero-content { max-width: 800px; animation: fade-in-up 1s ease-out forwards; }
+        .hero-content h1 { color: #fff; margin-bottom: 1.5rem; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); }
         .hero-content .btn-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        .btn-secondary { background-color: transparent; color: #fff; border-color: #fff; }
-        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
         
         @keyframes fade-in-up {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* =================================================================
-        DEFERRABLE CSS
-        ================================================================== */
-
+        
         .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
         .btn {
             display: inline-block; padding: 12px 28px; border-radius: 50px;
@@ -181,186 +154,162 @@
         }
         .btn-primary { background-color: var(--accent-color); color: #fff; border-color: var(--accent-color); }
         .btn-primary:hover, .btn-primary:focus { background-color: transparent; color: var(--accent-color); }
+        .btn-secondary { background-color: transparent; color: #fff; border: 2px solid #fff; }
+        .btn-secondary:hover, .btn-secondary:focus { background-color: #fff; color: var(--primary-color); }
 
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
-
+        
         .hamburger { display: none; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0.5rem; }
         .hamburger .bar {
             display: block; width: 25px; height: 3px; margin: 5px auto;
             background-color: var(--primary-color); transition: all var(--transition-speed) ease-in-out;
             border-radius: 3px;
         }
-        [data-theme="dark"] .hamburger .bar { background-color: var(--text-color); }
+        body.nav-open { overflow: hidden; }
 
-        #services { background-color: var(--background-color); }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        #services-full { background-color: var(--background-color); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 2rem; }
+        .service-card {
+            background-color: var(--surface-color); padding: 2.5rem 2rem; border-radius: var(--border-radius);
+            border: 1px solid #e0e0e0; display: flex; flex-direction: column;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
         }
-        .service-box {
-            background-color: var(--surface-color);
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            cursor: pointer;
-            padding: 2.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 250px;
-        }
-        .service-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-        .service-box .icon-wrapper {
-            width: 70px; height: 70px; margin-bottom: 1.5rem;
-            display: flex; align-items: center; justify-content: center;
-            background-color: var(--accent-color); border-radius: 50%;
-        }
-        .service-box .icon-wrapper i { font-size: 2.5rem; color: #fff; }
-        .service-box h3 { margin: 0 0 0.5rem; color: var(--primary-color); }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); border-color: var(--accent-color); }
+        .service-card i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1.5rem; text-align: center; }
+        .service-card h3 { text-align: center; }
+        .service-card .price { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); text-align: center; margin-bottom: 1.5rem;}
+        .service-card ul { list-style: none; margin-bottom: 2rem; }
+        .service-card ul li { margin-bottom: 0.75rem; display: flex; align-items: flex-start; }
+        .service-card ul li::before { content: '✓'; color: var(--accent-color); font-weight: bold; margin-right: 10px; }
+        .service-card .btn-primary { margin-top: auto; text-align: center; }
+
+        .industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .industry-card { background-color: var(--surface-color); padding: 2rem; border-radius: var(--border-radius); text-align: center; transition: transform var(--transition-speed), box-shadow var(--transition-speed); }
+        .industry-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
         
         #process { background-color: var(--surface-color); }
         .process-grid {
-            display: flex;
-            justify-content: space-between;
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 2rem; text-align: center; position: relative;
             align-items: flex-start;
-            gap: 1.5rem;
-            text-align: center;
-            flex-wrap: wrap;
-            position: relative;
         }
-        .process-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1 1 200px;
-            position: relative;
-        }
+        .process-step { display: flex; flex-direction: column; align-items: center; position: relative; }
         .process-number {
-            font-family: var(--heading-font); font-size: 1.8rem; font-weight: 700;
-            color: var(--accent-color); line-height: 1;
-            position: relative; display: flex; align-items: center; justify-content: center;
-            width: 70px; height: 70px; border-radius: 50%;
-            border: 2px solid var(--primary-color);
-            background-color: var(--background-color);
-            margin-bottom: 1rem; z-index: 1;
+            font-family: var(--heading-font); font-size: 2rem; font-weight: 700;
+            color: var(--accent-color); width: 70px; height: 70px;
+            border-radius: 50%; border: 3px solid var(--primary-color);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem; background-color: var(--background-color);
+            position: relative; z-index: 1;
         }
         .process-grid::before {
-            content: '';
-            position: absolute;
-            left: 15%; top: 35px;
+            content: ''; position: absolute;
+            top: 35px; left: 15%;
             width: 70%; height: 2px;
-            background-color: #ddd;
-            z-index: 0;
+            background: #e0e0e0; z-index: 0;
         }
-        .process-step h4 { margin-top: 0; margin-bottom: 0.5rem; }
+        .process-step h4 { margin-bottom: 0.5rem; }
 
-        #industries { background-color: var(--background-color); }
-        .industries-content {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 3rem; align-items: center;
-        }
-        .industries-text { border-left: 2px solid var(--accent-color); padding-left: 2rem; }
-        .industries-list {
-            list-style: none; padding: 0;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-        }
-        .industries-list li {
-            font-weight: 600; color: var(--primary-color);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .industries-list li i { color: var(--accent-color); }
+        #faq { background-color: var(--background-color); }
+        .faq-accordion { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 1rem; border-radius: 8px; border: 1px solid #e0e0e0; overflow: hidden; }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--primary-color); }
+        .faq-question .icon { transition: transform var(--transition-speed); }
+        .faq-question[aria-expanded="true"] .icon { transform: rotate(180deg); }
+        .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease-out; }
+        .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+        .faq-answer > div { overflow: hidden; }
+        .faq-answer p { padding: 0 1.5rem 1.5rem; margin: 0; }
+
+        #contact { background-color: var(--surface-color); }
+        .contact-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; background-color: var(--background-color); padding: var(--space-content); border-radius: var(--border-radius); }
+        .form-row { display: flex; gap: 1rem; }
+        .form-group { margin-bottom: 1.5rem; flex: 1; }
+        .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 1rem; border-radius: 5px; border: 1px solid #ccc; background-color: var(--background-color); color: var(--text-color); transition: border-color var(--transition-speed), box-shadow var(--transition-speed); }
+        .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); }
+        .contact-info { padding-left: 2rem; border-left: 2px solid var(--accent-color); }
+        .contact-info a { color: inherit; text-decoration: none; transition: color var(--transition-speed); }
+        .contact-info a:hover { color: var(--accent-color); }
         
+        .form-status { margin-top: 1rem; text-align: center; min-height: 1.5em; }
+        form.loading .btn { cursor: wait; background-color: var(--text-muted-color); border-color: var(--text-muted-color); }
+        form.loading .btn::after { content: ''; display: inline-block; width: 1em; height: 1em; border: 2px solid rgba(255,255,255,0.5); border-left-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite; margin-left: 0.5rem; vertical-align: middle; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
         .main-footer { background-color: var(--primary-color); color: #fff; padding: 4rem 0 2rem; }
-        [data-theme="dark"] .main-footer { background-color: #1E1E1E; }
-        .footer-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem; margin-bottom: 3rem;
-        }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1.2fr 1.5fr 1fr; gap: 3rem; margin-bottom: 3rem; }
         .footer-grid h4 { color: #fff; }
-        [data-theme="dark"] .footer-grid h4 { color: var(--accent-color); }
         .footer-grid p, .footer-grid li, .footer-grid a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition-speed); }
         .footer-grid a:hover { color: #fff; }
         .footer-grid ul { list-style: none; }
+        .footer-grid ul li { margin-bottom: 0.75rem; }
         .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
         .social-links a { font-size: 1.5rem; color: #fff; }
         .social-links a:hover { color: var(--accent-color); }
-        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        .footer-bottom a { color: #fff; }
+        .footer-bottom { display: flex; flex-wrap: wrap; justify-content: center; text-align: center; align-items: center; gap: 1rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-bottom p { margin: 0; }
+        .footer-bottom a { color: #fff; text-decoration: none; }
+        .footer-bottom a:hover { text-decoration: underline; }
 
-        .back-to-top, .theme-toggle {
-            position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px;
-            background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
-            cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden;
-            transition: opacity var(--transition-speed), visibility var(--transition-speed), transform var(--transition-speed);
-        }
-        .back-to-top:hover, .theme-toggle:hover { transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: var(--accent-color); color: #fff; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed), transform var(--transition-speed); }
+        .back-to-top:hover { transform: scale(1.1); }
         .back-to-top.show { opacity: 1; visibility: visible; }
-        .theme-toggle { right: 90px; opacity: 1; visibility: visible; }
-
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);
-            z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0;
-            visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed);
-        }
+        
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed), visibility var(--transition-speed); }
         .modal-overlay.show { opacity: 1; visibility: visible; }
-        .modal-content {
-            background-color: var(--background-color); border-radius: 15px; max-width: 700px; width: 95%;
-            position: relative; transform: scale(0.95);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15); max-height: 90vh; overflow-y: auto;
-        }
+        .modal-content { background-color: var(--background-color); border-radius: 15px; max-width: 800px; width: 95%; position: relative; transform: scale(0.95); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); display: flex; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         .modal-overlay.show .modal-content { transform: scale(1); }
-        .modal-close-btn {
-            position: absolute; top: 15px; right: 20px; background: none; border: none;
-            font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10;
-        }
-        .modal-content h3 {
-            margin-top: 0; display: flex; align-items: center;
-            gap: 1rem; color: var(--primary-color);
-        }
-        .modal-content h3 i { font-size: 2rem; color: var(--accent-color); }
-        .modal-content h4 { color: var(--accent-color); margin-top: 1rem; margin-bottom: 0.5rem; }
-        .modal-content ul { list-style: none; padding: 0; margin-top: 1rem; }
-        .modal-content li { position: relative; padding-left: 1.5rem; margin-bottom: 0.5rem; }
-        .modal-content li::before {
-            content: "\f00c"; font-family: "Font Awesome 6 Free";
-            font-weight: 900; color: var(--accent-color);
-            position: absolute; left: 0;
-        }
+        .modal-info-panel { background-color: var(--primary-color); color: #fff; padding: 3rem; width: 40%; display: flex; flex-direction: column; justify-content: center;}
+        .modal-info-panel h3 { color: #fff; font-size: 1.8rem; }
+        .modal-info-panel p { color: rgba(255,255,255,0.8); }
+        .modal-info-panel ul { list-style: none; margin-top: 2rem; padding: 0; }
+        .modal-info-panel li { display: flex; align-items: center; margin-bottom: 1rem; font-size: 1.1rem; }
+        .modal-info-panel li i { color: var(--accent-color); margin-right: 15px; width: 24px; text-align: center; }
+        .modal-form-panel { padding: 3rem; width: 60%; display: flex; flex-direction: column; justify-content: center; }
+        .modal-form-panel h3 { margin-bottom: 0.5rem; }
+        .modal-form-intro { margin-bottom: 1.5rem; color: var(--text-muted-color); }
+        .modal-close-btn { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-muted-color); z-index: 10; }
+        .modal-form .form-row { margin-bottom: 1.5rem; }
+        .modal-form .form-row .form-group { margin-bottom: 0; }
+        .modal-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        .modal-form input, .modal-form select { width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid #ddd; background-color: #fdfdfd; color: var(--text-color); font-size: 1rem; line-height: 1.5; transition: border-color var(--transition-speed), box-shadow var(--transition-speed); }
+        .modal-form input:focus, .modal-form select:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
+        .modal-form select { appearance: none; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); background-position: right 0.7rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem; }
+        .modal-form .btn { width: 100%; padding: 14px 28px; }
+        .main-footer address { font-style: normal; line-height: 1.8; }
 
         @media (max-width: 992px) {
             .nav-links {
-                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
-                background-color: var(--background-color); flex-direction: column; justify-content: center;
-                align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: transform var(--transition-speed) ease-in-out;
-                z-index: 1002; gap: 2.5rem;
-                transform: translateX(100%);
+                position: fixed; top: 0; right: 0; width: 70%; max-width: 300px;
+                height: 100vh; background-color: var(--background-color); flex-direction: column;
+                justify-content: center; align-items: center; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: transform var(--transition-speed) ease-in-out; transform: translateX(100%);
             }
             .nav-links.nav-active { transform: translateX(0); }
             .hamburger { display: block; }
             .hamburger[aria-expanded="true"] .bar:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
             .hamburger[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
             .hamburger[aria-expanded="true"] .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
-            .industries-content { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-info { border-left: none; padding-left: 0; margin-top: 2rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .process-grid::before { left: 25%; width: 50%; }
         }
         @media (max-width: 768px) {
             .hero-content p { font-size: 1rem; }
-            .footer-grid { text-align: center; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .social-links { justify-content: center; }
-            .process-grid { flex-direction: column; align-items: center; gap: 2rem; }
+            .footer-bottom { justify-content: center; flex-direction: column; }
+            .modal-content { flex-direction: column; max-width: 500px; max-height: 90vh; overflow-y: auto; }
+            .modal-info-panel, .modal-form-panel { width: 100%; padding: 2rem; }
+            .form-row { flex-direction: column; gap: 0; }
+            .modal-form .form-row { flex-direction: column; gap: 0; margin-bottom: 0;}
+            .modal-form .form-row .form-group { margin-bottom: 1.5rem; }
+            .process-grid { grid-template-columns: 1fr; gap: 3rem;}
             .process-grid::before { display: none; }
-            .process-step { max-width: 300px; }
-            .industries-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -368,10 +317,12 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="main-header">
         <nav class="navbar container">
-            <a href="index.html" class="logo">Wisetax Accountants</a>
+            <a href="index.html" class="logo" aria-label="Wisetax Accountants Homepage">
+                Wisetax Accountants
+            </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="services.html" class="active" aria-current="page">Services</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><button id="open-modal-btn" class="btn btn-primary">Book a Consultation</button></li>
@@ -384,67 +335,115 @@
         </nav>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" data-page-id="services">
         <!-- Hero Section -->
-        <section id="hero">
+        <section id="hero" aria-labelledby="hero-title">
             <div class="hero-video-wrapper">
                 <video autoplay loop muted playsinline preload="metadata" id="hero-video" poster="https://placehold.co/1920x1080/001f3f/001f3f.webp?text=+" width="1920" height="1080">
                     <source src="wisetax-hero.webm" type="video/webm">
                     <source src="wisetax-hero.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                    Your browser does not support the video tag. A blue background is shown instead.
                 </video>
             </div>
             <div class="hero-content">
-                <h1>Our Expert Accounting Services</h1>
+                <h1 id="hero-title">Our Expert Accounting Services</h1>
                 <p>Tailored financial solutions that grow with your business. From day-to-day bookkeeping to strategic growth planning, we provide a full range of services designed to simplify your finances and empower your success.</p>
                 <div class="btn-group">
-                    <a href="#services" class="btn btn-primary">Explore Services</a>
-                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#services-full" class="btn btn-primary">Explore Our Services</a>
+                    <a href="contact.html" class="btn btn-secondary">Get a Free Quote</a>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section with clickable boxes -->
-        <section id="services">
+        <!-- Full Services Section -->
+        <section id="services-full" aria-labelledby="services-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="fade-in">A Complete Suite of Financial Services</h2>
-                    <p class="fade-in">We have particular expertise as an ATOL certified accountant for the travel industry. Click on any service to learn more.</p>
+                    <h2 id="services-title" class="fade-in">A Complete Suite of Financial Services</h2>
+                    <p class="fade-in">We offer comprehensive, fixed-fee packages for all your accounting needs. We have particular expertise as an ATOL certified accountant for the travel industry.</p>
                 </div>
                 <div class="services-grid">
-                    <div class="service-box fade-in" data-service-id="self-assessment" role="button" tabindex="0">
-                        <div class="icon-wrapper"><i class="fas fa-user-check" aria-hidden="true"></i></div>
-                        <h3>Self-Assessment Tax Returns</h3>
-                    </div>
-                    <div class="service-box fade-in" data-service-id="company-accounts" role="button" tabindex="0">
-                        <div class="icon-wrapper"><i class="fas fa-building-flag" aria-hidden="true"></i></div>
-                        <h3>Company Accounts & Tax Return</h3>
-                    </div>
-                    <div class="service-box fade-in" data-service-id="bookkeeping-vat" role="button" tabindex="0">
-                        <div class="icon-wrapper"><i class="fas fa-book-open" aria-hidden="true"></i></div>
-                        <h3>Bookkeeping & VAT</h3>
-                    </div>
-                    <div class="service-box fade-in" data-service-id="growth-advisory" role="button" tabindex="0">
-                        <div class="icon-wrapper"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-                        <h3>Growth Advisory</h3>
-                    </div>
-                    <div class="service-box fade-in" data-service-id="payroll" role="button" tabindex="0">
-                        <div class="icon-wrapper"><i class="fas fa-users-cog" aria-hidden="true"></i></div>
-                        <h3>Payroll Services</h3>
-                    </div>
-                    <div class="service-box fade-in" data-service-id="company-formation" role="button" tabindex="0">
-                        <div class="icon-wrapper"><i class="fas fa-building" aria-hidden="true"></i></div>
-                        <h3>Company Formation</h3>
-                    </div>
+                    <article class="service-card fade-in" aria-labelledby="service-sa-title">
+                        <i class="fas fa-user-check" aria-hidden="true"></i>
+                        <h3 id="service-sa-title">Self-Assessment Tax Returns</h3>
+                        <p class="price">From &pound;150 +VAT</p>
+                        <ul>
+                            <li>Calculation of your tax liability</li>
+                            <li>Identifying all allowable expenses</li>
+                            <li>Online filing directly with HMRC</li>
+                            <li>Advice on tax payments & deadlines</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                    </article>
+                    <article class="service-card fade-in" aria-labelledby="service-ca-title">
+                        <i class="fas fa-building-flag" aria-hidden="true"></i>
+                        <h3 id="service-ca-title">Company Accounts & Tax</h3>
+                        <p class="price">From &pound;600 +VAT</p>
+                        <ul>
+                            <li>Preparation of Statutory Accounts</li>
+                            <li>Corporation Tax Return (CT600)</li>
+                            <li>Filing with Companies House & HMRC</li>
+                            <li>Proactive tax-saving advice</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                    </article>
+                    <article class="service-card fade-in" aria-labelledby="service-bk-title">
+                        <i class="fas fa-book-open" aria-hidden="true"></i>
+                        <h3 id="service-bk-title">Bookkeeping & VAT</h3>
+                        <p class="price">From &pound;120 /month</p>
+                        <ul>
+                            <li>Monthly or Quarterly Bookkeeping</li>
+                            <li>VAT Return Submission (MTD)</li>
+                            <li>Bank & Credit Card Reconciliation</li>
+                            <li>Xero/QuickBooks support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                    </article>
+                    <article class="service-card fade-in" aria-labelledby="service-ga-title">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        <h3 id="service-ga-title">Growth Advisory</h3>
+                        <p class="price">Bespoke Pricing</p>
+                        <ul>
+                            <li>Cash Flow Forecasting & Budgeting</li>
+                            <li>Detailed Management Accounts</li>
+                            <li>Business Planning & Strategy</li>
+                            <li>KPI & Performance Dashboards</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                    </article>
+                     <article class="service-card fade-in" aria-labelledby="service-pr-title">
+                        <i class="fas fa-users-cog" aria-hidden="true"></i>
+                        <h3 id="service-pr-title">Payroll Services</h3>
+                        <p class="price">From &pound;50 /month</p>
+                        <ul>
+                            <li>Monthly & Weekly Payroll Runs</li>
+                            <li>PAYE & NI Submissions to HMRC</li>
+                            <li>Pension Scheme Management</li>
+                            <li>Employee Payslips, P45s & P60s</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                    </article>
+                    <article class="service-card fade-in" aria-labelledby="service-cf-title">
+                        <i class="fas fa-building" aria-hidden="true"></i>
+                        <h3 id="service-cf-title">Company Formation</h3>
+                        <p class="price">From &pound;60 +VAT</p>
+                        <ul>
+                            <li>Limited Company Registration</li>
+                            <li>Liaison with Companies House</li>
+                            <li>Advice on VAT & PAYE registration</li>
+                            <li>Post-incorporation Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Process Section -->
-        <section id="process">
+        <section id="process" aria-labelledby="process-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="fade-in">Our Simple 4-Step Process</h2>
+                    <h2 id="process-title" class="fade-in">Our Simple 4-Step Process</h2>
                     <p class="fade-in">Getting started with us is straightforward and hassle-free.</p>
                 </div>
                 <div class="process-grid">
@@ -473,23 +472,58 @@
         </section>
 
         <!-- Industries Section -->
-        <section id="industries">
+        <section id="industries" aria-labelledby="industries-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="fade-in">Specialist Sector Expertise</h2>
+                    <h2 id="industries-title" class="fade-in">Industries We Serve in Slough</h2>
+                    <p class="fade-in">We provide specialist accounting services for a wide range of sectors in and around Slough.</p>
                 </div>
-                <div class="industries-content fade-in">
-                    <div class="industries-text">
-                        <p>Our in-depth knowledge of key industries allows us to provide targeted, commercially-astute advice. From the complexities of the Construction Industry Scheme (CIS) to the unique accounting needs of the healthcare sector, we are your trusted local experts.</p>
+                <div class="industries-grid">
+                    <div class="industry-card fade-in"><i class="fas fa-hard-hat" aria-hidden="true"></i><h4>Construction & Trade (CIS)</h4><p>CIS returns, project profitability, and tax planning for contractors in Slough.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-store" aria-hidden="true"></i><h4>Retail & E-commerce</h4><p>Stock management, payment gateway integration, and multi-channel reporting.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-users" aria-hidden="true"></i><h4>Professional Services</h4><p>Accounting for consultants, marketers, solicitors, and other service-based businesses.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-hospital" aria-hidden="true"></i><h4>Healthcare & Care Homes</h4><p>Specialist accounting for locums, private practices, and care sector providers.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-home" aria-hidden="true"></i><h4>Landlords & Property</h4><p>Property tax advice, rental income statements, and capital gains planning.</p></div>
+                    <div class="industry-card fade-in"><i class="fas fa-plane-departure" aria-hidden="true"></i><h4>Travel Agents (ATOL)</h4><p>Specialist ATOL Annual Accountants’ Reports and compliance advice for travel agents.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="faq-title" class="fade-in">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-accordion fade-in">
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+                            <span itemprop="name">How much do your accountancy services cost in Slough?</span> 
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Our services are based on fixed monthly fees. A typical sole trader package starts from &pound;150+VAT/year, while a limited company package with bookkeeping and VAT starts from &pound;120/month. We provide a tailored quote after our free initial consultation at our Slough office.</p></div></div>
                     </div>
-                    <ul class="industries-list">
-                        <li><i class="fas fa-hard-hat" aria-hidden="true"></i>Construction & Trade</li>
-                        <li><i class="fas fa-store" aria-hidden="true"></i>Retail & E-commerce</li>
-                        <li><i class="fas fa-users" aria-hidden="true"></i>Professional Services</li>
-                        <li><i class="fas fa-hospital" aria-hidden="true"></i>Healthcare & Care Homes</li>
-                        <li><i class="fas fa-home" aria-hidden="true"></i>Landlords</li>
-                        <li><i class="fas fa-plane-departure" aria-hidden="true"></i>Travel & Tourism</li>
-                    </ul>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+                            <span itemprop="name">How do I switch accountants to you?</span>
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>It's a simple process. Once you decide to join us, we handle everything. We'll contact your previous accountant to request all the necessary information, ensuring a smooth and hassle-free transition for you.</p></div></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+                            <span itemprop="name">What accounting software do you use?</span>
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>We are certified experts in major cloud accounting platforms like Xero, QuickBooks, and FreeAgent. We can work with your existing software or help you migrate to the best solution for your business.</p></div></div>
+                    </div>
+                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+                            <span itemprop="name">Can you help with just a one-off tax return?</span>
+                            <span class="icon" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Absolutely. While we offer comprehensive monthly packages, we are also happy to assist with one-off personal Self-Assessment tax returns. Contact our Slough accountants for a fixed-fee quote.</p></div></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -498,17 +532,21 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div><h4>Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth.</p></div>
+                <div><h4>About Wisetax Accountants</h4><p>Your trusted partner in financial clarity and business growth, serving Slough and the Thames Valley since 2015.</p></div>
                 <div><h4>Quick Links</h4><ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul></div>
-                <div><h4>Contact Us</h4>
-                    <p>1st Floor, 7 Mackenzie Street<br>Slough, SL1 1XQ</p>
-                    <p>Email: <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
-                    <p>Phone: <a href="tel:07533686857">07533 686857</a></p>
+                <div><h4>Contact Our Slough Office</h4>
+                    <address>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 1st Floor, 7 Mackenzie Street<br>
+                    Slough, SL1 1XQ</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@wisetax.org.uk">info@wisetax.org.uk</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:07533686857">07533 686857</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:01753531892">01753 531892</a></p>
+                    </address>
                 </div>
                 <div><h4>Connect With Us</h4><div class="social-links">
                     <a href="https://uk.linkedin.com/company/wisetax-accountants-uk" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -516,48 +554,74 @@
                     <a href="https://www.facebook.com/WisetaxUK" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 </div></div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Wisetax Accountants | All Rights Reserved | <a href="privacy.html">Privacy Notice</a></p></div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wisetax Accountants | All Rights Reserved | <a href="privacy.html">Privacy Notice</a></p>
+            </div>
         </div>
     </footer>
-
-    <!-- Service Details Modal -->
-    <div class="modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-title" hidden>
-        <div class="modal-content">
-            <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-            <h3 id="modal-service-title"></h3>
-            <p id="modal-service-desc"></p>
-            <h4>What's included?</h4>
-            <ul id="modal-service-list"></ul>
-            <h4 id="modal-service-price"></h4>
-            <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem; text-align:center;">Get a Quote</a>
-        </div>
-    </div>
     
     <!-- Consultation Modal -->
     <div class="modal-overlay" id="consultation-modal" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title" hidden>
         <div class="modal-content">
-             <div class="modal-info-panel">
-                <h3>Start the Conversation</h3>
-                <p>A free, no-obligation chat to see how we can help you achieve financial clarity.</p>
+            <div class="modal-info-panel">
+                <h3 id="consultation-modal-title">Unlock Your Business Potential</h3>
+                <p>Book a free, no-obligation chat with our expert Slough accountants. Discover how we can help you:</p>
+                <ul>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Develop a smart tax strategy</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Streamline your bookkeeping</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Identify growth opportunities</li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> Receive a fixed-fee quote</li>
+                </ul>
             </div>
             <div class="modal-form-panel">
                 <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
-                <h3 id="consultation-modal-title">Book a Free Consultation</h3>
+                <h3>Book Your Free Consultation</h3>
+                <p class="modal-form-intro">Fill in the details below and we'll get back to you shortly.</p>
                 <form class="modal-form" novalidate>
                     <input type="hidden" name="access_key" value="bc6fb5fc-82e9-4564-91f9-960547acb045">
-                    <div class="form-group"><label for="modal-name">Full Name</label><input type="text" id="modal-name" name="name" required></div>
-                    <div class="form-group"><label for="modal-email">Email</label><input type="email" id="modal-email" name="email" required></div>
-                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <input type="hidden" name="subject" value="Free Consultation Request from Wisetax Website">
+                    <div class="form-row">
+                         <div class="form-group">
+                            <label for="modal-name">Full Name *</label>
+                            <input type="text" id="modal-name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="modal-email">Email *</label>
+                            <input type="email" id="modal-email" name="email" required autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-phone">Phone Number</label>
+                        <input type="tel" id="modal-phone" name="phone" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-service">Service of Interest</label>
+                        <select id="modal-service" name="service">
+                            <option value="">-- Please Select --</option>
+                            <option value="Tax & Compliance">Tax & Compliance</option>
+                            <option value="Bookkeeping & VAT">Bookkeeping & VAT</option>
+                            <option value="Growth Advisory">Growth Advisory</option>
+                            <option value="New Business Startup">New Business Startup</option>
+                            <option value="Unsure / General Enquiry">Unsure / General Enquiry</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request My Consultation</button>
                     <p class="form-status" role="status"></p>
                 </form>
             </div>
         </div>
     </div>
-    
-    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
-    <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
 
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    
     <script>
+        // --- PAGE TRANSITION & APP INITIALIZER ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '1';
+            new WisetaxApp();
+        });
+
+        // Main App Initializer
         class WisetaxApp {
             constructor() {
                 this.initComponents();
@@ -566,80 +630,19 @@
 
             initComponents() {
                 this.mobileNav = new MobileNav();
-                this.themeToggle = new ThemeToggle();
                 this.backToTop = new BackToTop();
                 this.scrollAnimations = new ScrollAnimations();
-                this.serviceModals = new ServiceModals(this);
-                this.modalSystem = new ModalSystem(); 
+                this.faqAccordion = new FAQAccordion();
+                this.modalSystem = new ModalSystem();
                 this.formHandler = new FormHandler();
             }
-
+            
             initEventListeners() {
-                let lastScrollTop = 0;
-                const header = document.querySelector('.main-header');
-                window.addEventListener('scroll', () => {
-                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
-                        header.classList.add('hidden');
-                    } else {
-                        header.classList.remove('hidden');
-                    }
-                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                }, { passive: true });
+                // Keep header visible, no hiding on scroll
             }
         }
-        
-        class ServiceModals {
-            constructor(app) {
-                this.app = app;
-                this.serviceBoxes = document.querySelectorAll('.service-box');
-                this.modal = document.getElementById('service-modal');
-                if (!this.modal || this.serviceBoxes.length === 0) return;
 
-                this.modalTitle = this.modal.querySelector('#modal-service-title');
-                this.modalDesc = this.modal.querySelector('#modal-service-desc');
-                this.modalList = this.modal.querySelector('#modal-service-list');
-                this.modalPrice = this.modal.querySelector('#modal-service-price');
-
-                this.serviceData = {
-                    'self-assessment': { icon: 'fa-user-check', title: 'Self-Assessment Tax Returns', desc: 'We make tax returns simple for individuals, sole traders, and company directors.', list: ['Calculation of your tax liability', 'Identifying all allowable expenses', 'Online filing directly with HMRC', 'Advice on tax payments and deadlines'], price: 'from £150 +VAT' },
-                    'company-accounts': { icon: 'fa-building-flag', title: 'Company Accounts & Tax Return', desc: 'We ensure your accounts are professionally prepared and submitted on time.', list: ['Preparation of Statutory Accounts', 'Corporation Tax Return (CT600) submission', 'Filing with Companies House and HMRC', 'Proactive tax advice to minimize liabilities'], price: 'from £600 +VAT' },
-                    'bookkeeping-vat': { icon: 'fa-book-open', title: 'Bookkeeping & VAT', desc: 'Our services provide real-time financial insights so you can make informed decisions.', list: ['Monthly & Quarterly Bookkeeping', 'Bank & Credit Card Reconciliation', 'VAT Return Submission (MTD)', 'Xero/QuickBooks support'], price: 'from £100 +VAT per month' },
-                    'growth-advisory': { icon: 'fa-chart-line', title: 'Growth Advisory', desc: 'We act as a strategic partner in your business\'s growth, helping you plan for the future.', list: ['Cash Flow Forecasting', 'Management Accounts', 'Business Planning & Strategy', 'KPI & Performance Dashboards'], price: 'Contact for quote' },
-                    'payroll': { icon: 'fa-users-cog', title: 'Payroll Services', desc: 'Ensuring your employees are paid on time, every time, while keeping you compliant.', list: ['Monthly & Weekly Payroll Processing', 'PAYE & NI Submissions', 'Pension Scheme Management', 'P45s, P60s & Employee Payslips'], price: 'from £50 +VAT per month' },
-                    'company-formation': { icon: 'fa-building', title: 'Company Formation', desc: 'We provide a seamless company formation service, setting you up for success from day one.', list: ['Limited Company Formation', 'Liaison with Companies House', 'VAT & PAYE registration advice', 'Post-incorporation Support'], price: 'from £60 +VAT' }
-                };
-
-                this.serviceBoxes.forEach(box => {
-                    const handleOpen = () => this.openModal(box.dataset.serviceId);
-                    box.addEventListener('click', handleOpen);
-                    box.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            handleOpen();
-                        }
-                    });
-                });
-            }
-
-            openModal(serviceId) {
-                const data = this.serviceData[serviceId];
-                if (!data) return;
-
-                this.modalTitle.innerHTML = `<i class="fas ${data.icon}"></i> ${data.title}`;
-                this.modalDesc.textContent = data.desc;
-                this.modalPrice.textContent = `Price: ${data.price}`;
-                
-                this.modalList.innerHTML = '';
-                data.list.forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    this.modalList.appendChild(li);
-                });
-
-                this.app.modalSystem.openModal(this.modal);
-            }
-        }
+        // --- COMPONENT CLASSES ---
 
         class MobileNav {
             constructor() {
@@ -656,45 +659,16 @@
                  document.body.classList.toggle('nav-open', isActive);
             }
         }
-
-        class ThemeToggle {
-            constructor() {
-                this.toggleButton = document.querySelector('.theme-toggle');
-                if (!this.toggleButton) return;
-
-                this.themeIcon = this.toggleButton.querySelector('i');
-                this.initTheme();
-                this.toggleButton.addEventListener('click', this.toggleTheme.bind(this));
-            }
-
-            initTheme() {
-                const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                this.setTheme(savedTheme);
-            }
-
-            toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                this.setTheme(newTheme);
-            }
-
-            setTheme(theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                this.themeIcon.classList.toggle('fa-sun', theme === 'dark');
-                this.themeIcon.classList.toggle('fa-moon', theme === 'light');
-            }
-        }
-
+        
         class BackToTop {
             constructor() {
                 this.button = document.querySelector('.back-to-top');
                 if (!this.button) return;
-
+                
                 window.addEventListener('scroll', this.checkScroll.bind(this), { passive: true });
                 this.button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
             }
-
+            
             checkScroll() {
                 this.button.classList.toggle('show', window.scrollY > 300);
             }
@@ -714,6 +688,21 @@
                 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
             }
         }
+        
+        class FAQAccordion {
+            constructor() {
+                this.accordion = document.querySelector('.faq-accordion');
+                if (!this.accordion) return;
+                
+                this.accordion.addEventListener('click', e => {
+                    const question = e.target.closest('.faq-question');
+                    if (question) {
+                        const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                        question.setAttribute('aria-expanded', !isExpanded);
+                    }
+                });
+            }
+        }
 
         class ModalSystem {
             constructor() {
@@ -726,8 +715,8 @@
 
             init() {
                 this.openButtons.forEach(btn => btn.addEventListener('click', (e) => {
-                    e.preventDefault(); // Stop navigation
-                    this.openModal(document.getElementById('consultation-modal'))
+                    this.previouslyFocusedElement = e.currentTarget;
+                    this.openModal(document.getElementById('consultation-modal'));
                 }));
                 
                 this.modals.forEach(modal => {
@@ -745,44 +734,53 @@
             }
 
             openModal(modal) {
-                this.previouslyFocusedElement = document.activeElement;
                 modal.removeAttribute('hidden');
-                modal.classList.add('show');
                 document.body.style.overflow = 'hidden';
-                this.trapFocus(modal);
+                setTimeout(() => {
+                    modal.classList.add('show');
+                    this.trapFocus(modal);
+                }, 10);
             }
 
             closeModal(modal) {
                 modal.classList.remove('show');
-                modal.setAttribute('hidden', true);
                 document.body.style.overflow = '';
-                if (this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
-            }
+                
+                modal.addEventListener('transitionend', () => {
+                    modal.setAttribute('hidden', true);
+                }, { once: true });
 
+                if(this.previouslyFocusedElement) this.previouslyFocusedElement.focus();
+            }
+            
             trapFocus(modal) {
                 const focusableContent = modal.querySelectorAll(this.focusableElements);
                 const firstFocusable = focusableContent[0];
                 const lastFocusable = focusableContent[focusableContent.length - 1];
+
                 firstFocusable.focus();
 
                 modal.addEventListener('keydown', e => {
                     if (e.key !== 'Tab') return;
+
                     if (e.shiftKey) {
                         if (document.activeElement === firstFocusable) {
-                            lastFocusable.focus(); e.preventDefault();
+                            lastFocusable.focus();
+                            e.preventDefault();
                         }
                     } else {
                         if (document.activeElement === lastFocusable) {
-                            firstFocusable.focus(); e.preventDefault();
+                            firstFocusable.focus();
+                            e.preventDefault();
                         }
                     }
                 });
             }
         }
-
-         class FormHandler {
+        
+        class FormHandler {
             constructor() {
-                document.querySelectorAll('.modal-form').forEach(form => {
+                document.querySelectorAll('#contact-form, .modal-form').forEach(form => {
                     form.addEventListener('submit', this.handleFormSubmit.bind(this));
                 });
             }
@@ -824,15 +822,10 @@
                 } finally {
                     form.classList.remove('loading');
                     submitButton.disabled = false;
-                    setTimeout(() => { statusElement.textContent = ''; statusElement.style.color = '' }, 5000);
+                    setTimeout(() => { statusElement.textContent = ''; }, 5000);
                 }
             }
         }
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            new WisetaxApp();
-        });
     </script>
 </body>
 </html>
-
